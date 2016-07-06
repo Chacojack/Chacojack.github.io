@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chacojack.github.io/"/>
-  <updated>2016-07-05T08:47:49.000Z</updated>
+  <updated>2016-07-06T14:47:06.000Z</updated>
   <id>https://chacojack.github.io/</id>
   
   <author>
@@ -16,28 +16,81 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://chacojack.github.io/2016/07/04/hello-world/"/>
-    <id>https://chacojack.github.io/2016/07/04/hello-world/</id>
-    <published>2016-07-04T08:28:18.000Z</published>
-    <updated>2016-07-05T08:47:49.000Z</updated>
+    <title>生成Java签名.keystore文件的方法</title>
+    <link href="https://chacojack.github.io/2016/07/06/Java%E7%AD%BE%E5%90%8D-keystore%E6%96%87%E4%BB%B6%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/"/>
+    <id>https://chacojack.github.io/2016/07/06/Java签名-keystore文件的生成方法/</id>
+    <published>2016-07-06T13:21:01.000Z</published>
+    <updated>2016-07-06T14:47:06.000Z</updated>
     
-    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo server&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;今天接触到了Java签名相关的东西，想要学习一下，很多东西介绍的不全面，前因后果也介绍的不是很清楚。找了很多地方终于了解了大概，整理在这里。考虑到很多查看的人的需求点不同，也没有必要把所有的东西放在一遍文章中，导致文章很长。这篇文章就只介绍Java签名.keystore文件的生成方法，和相关的操作。&lt;/p&gt;
+&lt;h2 id=&quot;生成方法&quot;&gt;&lt;a href=&quot;#生成方法&quot; class=&quot;headerlink&quot; title=&quot;生成方法&quot;&gt;&lt;/a&gt;生成方法&lt;/h2&gt;&lt;p&gt;在终端输入：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;keytool -genkey -alias javadebugkey(别名) -keypass java123(别名密) -keyalg RSA(生成签名算法) -keysize 1024(密钥长度) -validity 365(有效期，天单位) -keystore javadebugkey.keystore(生成的keystore文件)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;括号中是前面字符串含义的说明，这些信息在有的时候是要用的。别名，别名密码等。在终端输入之后，自定义自己的.keystore信息之后把括号内容去掉。之后回车，先会让你输入密码，例如123456，之后会提示让你输入相关信息，输入即可，中国是CN。&lt;/p&gt;
+&lt;h2 id=&quot;对-keystore文件的操作&quot;&gt;&lt;a href=&quot;#对-keystore文件的操作&quot; class=&quot;headerlink&quot; title=&quot;对.keystore文件的操作&quot;&gt;&lt;/a&gt;对.keystore文件的操作&lt;/h2&gt;&lt;h3 id=&quot;查看&quot;&gt;&lt;a href=&quot;#查看&quot; class=&quot;headerlink&quot; title=&quot;查看&quot;&gt;&lt;/a&gt;查看&lt;/h3&gt;&lt;p&gt;查看一个keystore文件的内部信息：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;keytool -list  -v -keystore javadebugkey.keystore -storepass 123456&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;就可以看到相关信息。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;密钥库类型: JKS&lt;br&gt;密钥库提供方: SUN&lt;/p&gt;
+&lt;p&gt;您的密钥库包含 1 个条目&lt;/p&gt;
+&lt;p&gt;别名: javadebugkey&lt;br&gt;创建日期: 2016-7-6&lt;br&gt;条目类型: PrivateKeyEntry&lt;br&gt;证书链长度: 1&lt;br&gt;证书[1]:&lt;br&gt;所有者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown&lt;br&gt;发布者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown&lt;br&gt;序列号: 48eff7e5&lt;br&gt;有效期开始日期: Wed Jul 06 21:58:54 CST 2016, 截止日期: Thu Jul 06 21:58:54 CST 2017&lt;br&gt;证书指纹:&lt;br&gt;     MD5: E7:8B:2F:27:05:3B:35:63:49:FD:79:8A:B5:2A:C6:AE&lt;br&gt;     SHA1: F7:47:F2:71:72:9A:88:43:60:74:AA:2B:65:69:15:03:37:CB:CB:31&lt;br&gt;     SHA256: 77:F6:5B:29:22:85:49:CB:44:1B:A4:4E:BD:3F:B4:2B:D6:B3:05:E1:46:B5:56:7E:F0:AD:C8:08:CA:AB:CE:DE&lt;br&gt;     签名算法名称: SHA256withRSA&lt;br&gt;     版本: 3&lt;/p&gt;
+&lt;p&gt;扩展: &lt;/p&gt;
+&lt;p&gt;#1: ObjectId: 2.5.29.14 Criticality=false&lt;br&gt;SubjectKeyIdentifier [&lt;br&gt;KeyIdentifier [&lt;br&gt;0000: A7 11 32 79 F3 16 DD 7B   C5 DE 22 8C FC 70 47 BC  ..2y……”..pG.&lt;br&gt;0010: 4B 00 E0 A8                                        K…&lt;br&gt;]&lt;br&gt;]&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;导出证书&quot;&gt;&lt;a href=&quot;#导出证书&quot; class=&quot;headerlink&quot; title=&quot;导出证书&quot;&gt;&lt;/a&gt;导出证书&lt;/h3&gt;&lt;p&gt;终端输入：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;keytool -export -alias javadebugkey -keystore javadebugkey.keystore -file javadebugkey.crt(指定导出的证书) -storepass 123456&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;即可得到该签名的证书&lt;/p&gt;
+&lt;h3 id=&quot;查看证书&quot;&gt;&lt;a href=&quot;#查看证书&quot; class=&quot;headerlink&quot; title=&quot;查看证书&quot;&gt;&lt;/a&gt;查看证书&lt;/h3&gt;&lt;p&gt;终端输入：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;keytool -printcert -file javadebugkey.crt&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;得到结果：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt; 所有者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown&lt;br&gt;发布者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown&lt;br&gt;序列号: 48eff7e5&lt;br&gt;有效期开始日期: Wed Jul 06 21:58:54 CST 2016, 截止日期: Thu Jul 06 21:58:54 CST 2017&lt;br&gt;证书指纹:&lt;br&gt;     MD5: E7:8B:2F:27:05:3B:35:63:49:FD:79:8A:B5:2A:C6:AE&lt;br&gt;     SHA1: F7:47:F2:71:72:9A:88:43:60:74:AA:2B:65:69:15:03:37:CB:CB:31&lt;br&gt;     SHA256: 77:F6:5B:29:22:85:49:CB:44:1B:A4:4E:BD:3F:B4:2B:D6:B3:05:E1:46:B5:56:7E:F0:AD:C8:08:CA:AB:CE:DE&lt;br&gt;     签名算法名称: SHA256withRSA&lt;br&gt;     版本: 3&lt;/p&gt;
+&lt;p&gt;扩展: &lt;/p&gt;
+&lt;p&gt;#1: ObjectId: 2.5.29.14 Criticality=false&lt;br&gt;SubjectKeyIdentifier [&lt;br&gt;KeyIdentifier [&lt;br&gt;0000: A7 11 32 79 F3 16 DD 7B   C5 DE 22 8C FC 70 47 BC  ..2y……”..pG.&lt;br&gt;0010: 4B 00 E0 A8                                        K…&lt;br&gt;]&lt;br&gt;]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;删除信息&quot;&gt;&lt;a href=&quot;#删除信息&quot; class=&quot;headerlink&quot; title=&quot;删除信息&quot;&gt;&lt;/a&gt;删除信息&lt;/h3&gt;&lt;p&gt;删除一个条目&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;keytool -delete -alias javadebugkey -keystore javadebugkey.keystore -storepass 123456&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之后用上面的方法查看结果：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;密钥库类型: JKS&lt;br&gt;密钥库提供方: SUN&lt;/p&gt;
+&lt;p&gt;您的密钥库包含 0 个条目&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;导入证书&quot;&gt;&lt;a href=&quot;#导入证书&quot; class=&quot;headerlink&quot; title=&quot;导入证书&quot;&gt;&lt;/a&gt;导入证书&lt;/h3&gt;&lt;p&gt;将我们刚才的证书导入：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;keytool -import -alias java -keypass java123 -file javadebugkey.crt -keystore javadebugkey.keystore -storepass 123456&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;再次查看文件信息：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;密钥库类型: JKS&lt;br&gt;密钥库提供方: SUN&lt;/p&gt;
+&lt;p&gt;您的密钥库包含 1 个条目&lt;/p&gt;
+&lt;p&gt;别名: java&lt;br&gt;创建日期: 2016-7-6&lt;br&gt;条目类型: trustedCertEntry&lt;/p&gt;
+&lt;p&gt;所有者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown&lt;br&gt;发布者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown&lt;br&gt;序列号: 48eff7e5&lt;br&gt;有效期开始日期: Wed Jul 06 21:58:54 CST 2016, 截止日期: Thu Jul 06 21:58:54 CST 2017&lt;br&gt;证书指纹:&lt;br&gt;     MD5: E7:8B:2F:27:05:3B:35:63:49:FD:79:8A:B5:2A:C6:AE&lt;br&gt;     SHA1: F7:47:F2:71:72:9A:88:43:60:74:AA:2B:65:69:15:03:37:CB:CB:31&lt;br&gt;     SHA256: 77:F6:5B:29:22:85:49:CB:44:1B:A4:4E:BD:3F:B4:2B:D6:B3:05:E1:46:B5:56:7E:F0:AD:C8:08:CA:AB:CE:DE&lt;br&gt;     签名算法名称: SHA256withRSA&lt;br&gt;     版本: 3&lt;/p&gt;
+&lt;p&gt;扩展: &lt;/p&gt;
+&lt;p&gt;#1: ObjectId: 2.5.29.14 Criticality=false&lt;br&gt;SubjectKeyIdentifier [&lt;br&gt;KeyIdentifier [&lt;br&gt;0000: A7 11 32 79 F3 16 DD 7B   C5 DE 22 8C FC 70 47 BC  ..2y……”..pG.&lt;br&gt;0010: 4B 00 E0 A8                                        K…&lt;br&gt;]&lt;br&gt;]&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;更多操作&quot;&gt;&lt;a href=&quot;#更多操作&quot; class=&quot;headerlink&quot; title=&quot;更多操作&quot;&gt;&lt;/a&gt;更多操作&lt;/h3&gt;&lt;p&gt;更多操作请看keytool的帮助&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;今天接触到了Java签名相关的东西，想要学习一下，很多东西介绍的不全面，前因后果也介绍的不是很清楚。找了很多地方终于了解了大概，整理在这里。考虑到很多查看的人的需求点不同，也没有必要把所有的东西放在一遍文章中，导致文章很长。这篇文章就只介绍Java签名.keystore文件
     
     </summary>
+    
+      <category term="Java" scheme="https://chacojack.github.io/categories/Java/"/>
     
     
   </entry>

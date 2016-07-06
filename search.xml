@@ -4,17 +4,68 @@
   
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>https://chacojack.github.io/2016/07/04/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+      <title><![CDATA[生成Java签名.keystore文件的方法]]></title>
+      <url>https://chacojack.github.io/2016/07/06/Java%E7%AD%BE%E5%90%8D-keystore%E6%96%87%E4%BB%B6%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>今天接触到了Java签名相关的东西，想要学习一下，很多东西介绍的不全面，前因后果也介绍的不是很清楚。找了很多地方终于了解了大概，整理在这里。考虑到很多查看的人的需求点不同，也没有必要把所有的东西放在一遍文章中，导致文章很长。这篇文章就只介绍Java签名.keystore文件的生成方法，和相关的操作。</p>
+<h2 id="生成方法"><a href="#生成方法" class="headerlink" title="生成方法"></a>生成方法</h2><p>在终端输入：</p>
+<blockquote>
+<p>keytool -genkey -alias javadebugkey(别名) -keypass java123(别名密) -keyalg RSA(生成签名算法) -keysize 1024(密钥长度) -validity 365(有效期，天单位) -keystore javadebugkey.keystore(生成的keystore文件)</p>
+</blockquote>
+<p>括号中是前面字符串含义的说明，这些信息在有的时候是要用的。别名，别名密码等。在终端输入之后，自定义自己的.keystore信息之后把括号内容去掉。之后回车，先会让你输入密码，例如123456，之后会提示让你输入相关信息，输入即可，中国是CN。</p>
+<h2 id="对-keystore文件的操作"><a href="#对-keystore文件的操作" class="headerlink" title="对.keystore文件的操作"></a>对.keystore文件的操作</h2><h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><p>查看一个keystore文件的内部信息：</p>
+<blockquote>
+<p>keytool -list  -v -keystore javadebugkey.keystore -storepass 123456</p>
+</blockquote>
+<p>就可以看到相关信息。</p>
+<blockquote>
+<p>密钥库类型: JKS<br>密钥库提供方: SUN</p>
+<p>您的密钥库包含 1 个条目</p>
+<p>别名: javadebugkey<br>创建日期: 2016-7-6<br>条目类型: PrivateKeyEntry<br>证书链长度: 1<br>证书[1]:<br>所有者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown<br>发布者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown<br>序列号: 48eff7e5<br>有效期开始日期: Wed Jul 06 21:58:54 CST 2016, 截止日期: Thu Jul 06 21:58:54 CST 2017<br>证书指纹:<br>     MD5: E7:8B:2F:27:05:3B:35:63:49:FD:79:8A:B5:2A:C6:AE<br>     SHA1: F7:47:F2:71:72:9A:88:43:60:74:AA:2B:65:69:15:03:37:CB:CB:31<br>     SHA256: 77:F6:5B:29:22:85:49:CB:44:1B:A4:4E:BD:3F:B4:2B:D6:B3:05:E1:46:B5:56:7E:F0:AD:C8:08:CA:AB:CE:DE<br>     签名算法名称: SHA256withRSA<br>     版本: 3</p>
+<p>扩展: </p>
+<p>#1: ObjectId: 2.5.29.14 Criticality=false<br>SubjectKeyIdentifier [<br>KeyIdentifier [<br>0000: A7 11 32 79 F3 16 DD 7B   C5 DE 22 8C FC 70 47 BC  ..2y……”..pG.<br>0010: 4B 00 E0 A8                                        K…<br>]<br>]</p>
+<hr>
+<hr>
+</blockquote>
+<h3 id="导出证书"><a href="#导出证书" class="headerlink" title="导出证书"></a>导出证书</h3><p>终端输入：</p>
+<blockquote>
+<p>keytool -export -alias javadebugkey -keystore javadebugkey.keystore -file javadebugkey.crt(指定导出的证书) -storepass 123456</p>
+</blockquote>
+<p>即可得到该签名的证书</p>
+<h3 id="查看证书"><a href="#查看证书" class="headerlink" title="查看证书"></a>查看证书</h3><p>终端输入：</p>
+<blockquote>
+<p>keytool -printcert -file javadebugkey.crt</p>
+</blockquote>
+<p>得到结果：</p>
+<blockquote>
+<p> 所有者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown<br>发布者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown<br>序列号: 48eff7e5<br>有效期开始日期: Wed Jul 06 21:58:54 CST 2016, 截止日期: Thu Jul 06 21:58:54 CST 2017<br>证书指纹:<br>     MD5: E7:8B:2F:27:05:3B:35:63:49:FD:79:8A:B5:2A:C6:AE<br>     SHA1: F7:47:F2:71:72:9A:88:43:60:74:AA:2B:65:69:15:03:37:CB:CB:31<br>     SHA256: 77:F6:5B:29:22:85:49:CB:44:1B:A4:4E:BD:3F:B4:2B:D6:B3:05:E1:46:B5:56:7E:F0:AD:C8:08:CA:AB:CE:DE<br>     签名算法名称: SHA256withRSA<br>     版本: 3</p>
+<p>扩展: </p>
+<p>#1: ObjectId: 2.5.29.14 Criticality=false<br>SubjectKeyIdentifier [<br>KeyIdentifier [<br>0000: A7 11 32 79 F3 16 DD 7B   C5 DE 22 8C FC 70 47 BC  ..2y……”..pG.<br>0010: 4B 00 E0 A8                                        K…<br>]<br>]</p>
+</blockquote>
+<h3 id="删除信息"><a href="#删除信息" class="headerlink" title="删除信息"></a>删除信息</h3><p>删除一个条目</p>
+<blockquote>
+<p>keytool -delete -alias javadebugkey -keystore javadebugkey.keystore -storepass 123456</p>
+</blockquote>
+<p>之后用上面的方法查看结果：</p>
+<blockquote>
+<p>密钥库类型: JKS<br>密钥库提供方: SUN</p>
+<p>您的密钥库包含 0 个条目</p>
+</blockquote>
+<h3 id="导入证书"><a href="#导入证书" class="headerlink" title="导入证书"></a>导入证书</h3><p>将我们刚才的证书导入：</p>
+<blockquote>
+<p>keytool -import -alias java -keypass java123 -file javadebugkey.crt -keystore javadebugkey.keystore -storepass 123456</p>
+</blockquote>
+<p>再次查看文件信息：</p>
+<blockquote>
+<p>密钥库类型: JKS<br>密钥库提供方: SUN</p>
+<p>您的密钥库包含 1 个条目</p>
+<p>别名: java<br>创建日期: 2016-7-6<br>条目类型: trustedCertEntry</p>
+<p>所有者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown<br>发布者: CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown<br>序列号: 48eff7e5<br>有效期开始日期: Wed Jul 06 21:58:54 CST 2016, 截止日期: Thu Jul 06 21:58:54 CST 2017<br>证书指纹:<br>     MD5: E7:8B:2F:27:05:3B:35:63:49:FD:79:8A:B5:2A:C6:AE<br>     SHA1: F7:47:F2:71:72:9A:88:43:60:74:AA:2B:65:69:15:03:37:CB:CB:31<br>     SHA256: 77:F6:5B:29:22:85:49:CB:44:1B:A4:4E:BD:3F:B4:2B:D6:B3:05:E1:46:B5:56:7E:F0:AD:C8:08:CA:AB:CE:DE<br>     签名算法名称: SHA256withRSA<br>     版本: 3</p>
+<p>扩展: </p>
+<p>#1: ObjectId: 2.5.29.14 Criticality=false<br>SubjectKeyIdentifier [<br>KeyIdentifier [<br>0000: A7 11 32 79 F3 16 DD 7B   C5 DE 22 8C FC 70 47 BC  ..2y……”..pG.<br>0010: 4B 00 E0 A8                                        K…<br>]<br>]</p>
+<hr>
+<hr>
+</blockquote>
+<h3 id="更多操作"><a href="#更多操作" class="headerlink" title="更多操作"></a>更多操作</h3><p>更多操作请看keytool的帮助</p>
 ]]></content>
     </entry>
     
