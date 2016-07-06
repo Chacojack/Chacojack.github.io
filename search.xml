@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title><![CDATA[Android应用配置签名]]></title>
+      <url>https://chacojack.github.io/2016/07/06/Android%E5%BA%94%E7%94%A8%E9%85%8D%E7%BD%AE%E7%AD%BE%E5%90%8D/</url>
+      <content type="html"><![CDATA[<p>Android应用在Debug模式下ADT会自动用默认的密钥和证书来进行签名，但是在发布的时候就需要一个手动配置。<br>生成签名的方法见我的上一篇文章：<a href="https://chacojack.github.io/2016/07/06/Java%E7%AD%BE%E5%90%8D-keystore%E6%96%87%E4%BB%B6%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/">生成Java签名.keystore文件的方法</a></p>
+<h2 id="为Android应用配置签名"><a href="#为Android应用配置签名" class="headerlink" title="为Android应用配置签名"></a>为Android应用配置签名</h2><h3 id="代码添加"><a href="#代码添加" class="headerlink" title="代码添加"></a>代码添加</h3><p>在Android应用的build.gradle文件的android中添加如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">signingConfigs &#123;</div><div class="line">    debug &#123;</div><div class="line">        keyAlias &apos;androiddebugkey&apos;</div><div class="line">        keyPassword &apos;android&apos;</div><div class="line">        storeFile file(&apos;../KEYSTORE/debug.keystore&apos;)</div><div class="line">        storePassword &apos;123456&apos;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其中keyAlias对应签名中的别名，keyPassword对应别名密码，storeFile是签名的文件路径，storePassword是签名的密码。</p>
+<h3 id="可视化添加"><a href="#可视化添加" class="headerlink" title="可视化添加"></a>可视化添加</h3><p>通过快捷键<code>Command+;</code>，或者是<code>File-&gt;Project Structure</code>打开Project Structure对话框，然后选择<code>Signing</code>标签，然后在其中我们可以添加签名。</p>
+<p><img src="../images/7513CAB4-B492-434A-B496-76670B695210.png" alt=""></p>
+<p>通过途中红框标出的加号添加一个签名，在右侧填写信息即可，之后点击OK。这种方法，Android Studio会自动为我们添加上面的代码。</p>
+<h3 id="使用签名"><a href="#使用签名" class="headerlink" title="使用签名"></a>使用签名</h3><p>签名是要在打包的时候使用。打包一般用debug包和release包，因为我们的签名是为debug准备的，那么下来我演示打debug包时怎么使用。</p>
+<p>还是在build.gradle的android中添加如下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">buildTypes &#123;</div><div class="line">    debug &#123;</div><div class="line">        signingConfig singingConfigs.debug</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样我们在打debug包的时候就会带上这个签名了。</p>
+<h2 id="为什么Android应用需要签名"><a href="#为什么Android应用需要签名" class="headerlink" title="为什么Android应用需要签名"></a>为什么Android应用需要签名</h2><p>这里我在网上找了一些资料总结了一下，这个理解一下就可以了。</p>
+<ol>
+<li>应用程序升级——当你对应用程序进行升级时，如果你想用户平稳的升级，那么，你就需要签上相同的证书。当系统安装一个升级应用程序时，如果新版本的证书与老版本的证书有匹配的话，那么，系统才会允许进行升级。如果你没有为版本签上合适的证书，当你安装时，你需要给应用程序指定一个新的包名——在这种情况下，用户安装的新版本，被当作是一个全新的应用程序。</li>
+<li>应用程序模块化——如果应用程序请求的话，Android系统允许签有相同证书的应用程序运行在相同的进程里，这样，系统就会把它们看作是一个单一的应用程序。用这种方法配置应用程序，用户可以选择更新每个独立的模块。</li>
+<li>代码/数据权限共享——Android系统提供了基于签名的权限检查，因此，如果应用程序间签有特定的证书，那么，它们之间可以共享功能。通过多个程序签有相同的证书并且使用基于签名的权限检查，你的程序可以以一种安全的方式共享代码和数据。还有一个决定签名策略的重要因素是：如何设定key的有效期。</li>
+<li>发送者的身份认证，由于开发商可能通过使用相同的Package Name来混淆替换已经安装的程序，以此保证签名不同的包不被替换</li>
+<li>保证信息传输的完整性，签名对于包中的每个文件进行处理，以此确保包中内容不被替换。</li>
+<li>防止交易中的抵赖发生， 市场对软件的要求</li>
+</ol>
+<p>Android中使用签名的相关知识请参考以下文章：</p>
+<p><a href="http://ijavagos.iteye.com/blog/1057666" target="_blank" rel="external">android签名</a></p>
+<p><a href="http://zhidao.baidu.com/link?url=6KhdpKM92muVankVS0LSKFztL5KN_2DQ5dtDHS2EbueJzZoADtRb06Uc_9KmWcuBxELs1aBk7Sw6Rqtob49bB-56DSPN-HNpD43wFx2QwRW" target="_blank" rel="external">如何发布android 应用程序，app增加签名证书</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[生成Java签名.keystore文件的方法]]></title>
       <url>https://chacojack.github.io/2016/07/06/Java%E7%AD%BE%E5%90%8D-keystore%E6%96%87%E4%BB%B6%E7%9A%84%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95/</url>
       <content type="html"><![CDATA[<p>今天接触到了Java签名相关的东西，想要学习一下，很多东西介绍的不全面，前因后果也介绍的不是很清楚。找了很多地方终于了解了大概，整理在这里。考虑到很多查看的人的需求点不同，也没有必要把所有的东西放在一遍文章中，导致文章很长。这篇文章就只介绍Java签名.keystore文件的生成方法，和相关的操作。</p>
