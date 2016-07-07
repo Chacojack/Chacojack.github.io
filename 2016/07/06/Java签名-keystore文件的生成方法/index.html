@@ -90,7 +90,7 @@
 <meta property="og:url" content="https://chacojack.github.io/2016/07/06/Java签名-keystore文件的生成方法/index.html">
 <meta property="og:site_name" content="ZejianChai's Note">
 <meta property="og:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x63A5;&amp;#x89E6;&amp;#x5230;&amp;#x4E86;Java&amp;#x7B7E;&amp;#x540D;&amp;#x76F8;&amp;#x5173;&amp;#x7684;&amp;#x4E1C;&amp;#x897F;&amp;#xFF0C;&amp;#x60F3;&amp;#x8981;&amp;#x5B66;&amp;#x4E60;&amp;#x4E00;&amp;#x4E0B;&amp;#xFF0C;&amp;#x5F88;&amp;#x591A;&amp;#x4E1C;&amp;#x8">
-<meta property="og:updated_time" content="2016-07-06T14:47:06.000Z">
+<meta property="og:updated_time" content="2016-07-07T02:23:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="生成Java签名.keystore文件的方法">
 <meta name="twitter:description" content="&amp;#x4ECA;&amp;#x5929;&amp;#x63A5;&amp;#x89E6;&amp;#x5230;&amp;#x4E86;Java&amp;#x7B7E;&amp;#x540D;&amp;#x76F8;&amp;#x5173;&amp;#x7684;&amp;#x4E1C;&amp;#x897F;&amp;#xFF0C;&amp;#x60F3;&amp;#x8981;&amp;#x5B66;&amp;#x4E60;&amp;#x4E00;&amp;#x4E0B;&amp;#xFF0C;&amp;#x5F88;&amp;#x591A;&amp;#x4E1C;&amp;#x8">
@@ -349,6 +349,7 @@
 <blockquote>
 <p>keytool -genkey -alias javadebugkey(&#x522B;&#x540D;) -keypass java123(&#x522B;&#x540D;&#x5BC6;) -keyalg RSA(&#x751F;&#x6210;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;) -keysize 1024(&#x5BC6;&#x94A5;&#x957F;&#x5EA6;) -validity 365(&#x6709;&#x6548;&#x671F;&#xFF0C;&#x5929;&#x5355;&#x4F4D;) -keystore javadebugkey.keystore(&#x751F;&#x6210;&#x7684;keystore&#x6587;&#x4EF6;)</p>
 </blockquote>
+<a id="more"></a>
 <p>&#x62EC;&#x53F7;&#x4E2D;&#x662F;&#x524D;&#x9762;&#x5B57;&#x7B26;&#x4E32;&#x542B;&#x4E49;&#x7684;&#x8BF4;&#x660E;&#xFF0C;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x5728;&#x6709;&#x7684;&#x65F6;&#x5019;&#x662F;&#x8981;&#x7528;&#x7684;&#x3002;&#x522B;&#x540D;&#xFF0C;&#x522B;&#x540D;&#x5BC6;&#x7801;&#x7B49;&#x3002;&#x5728;&#x7EC8;&#x7AEF;&#x8F93;&#x5165;&#x4E4B;&#x540E;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;.keystore&#x4FE1;&#x606F;&#x4E4B;&#x540E;&#x628A;&#x62EC;&#x53F7;&#x5185;&#x5BB9;&#x53BB;&#x6389;&#x3002;&#x4E4B;&#x540E;&#x56DE;&#x8F66;&#xFF0C;&#x5148;&#x4F1A;&#x8BA9;&#x4F60;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF0C;&#x4F8B;&#x5982;123456&#xFF0C;&#x4E4B;&#x540E;&#x4F1A;&#x63D0;&#x793A;&#x8BA9;&#x4F60;&#x8F93;&#x5165;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x8F93;&#x5165;&#x5373;&#x53EF;&#xFF0C;&#x4E2D;&#x56FD;&#x662F;CN&#x3002;</p>
 <h2 id="&#x5BF9;-keystore&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;"><a href="#&#x5BF9;-keystore&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;" class="headerlink" title="&#x5BF9;.keystore&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;"></a>&#x5BF9;.keystore&#x6587;&#x4EF6;&#x7684;&#x64CD;&#x4F5C;</h2><h3 id="&#x67E5;&#x770B;"><a href="#&#x67E5;&#x770B;" class="headerlink" title="&#x67E5;&#x770B;"></a>&#x67E5;&#x770B;</h3><p>&#x67E5;&#x770B;&#x4E00;&#x4E2A;keystore&#x6587;&#x4EF6;&#x7684;&#x5185;&#x90E8;&#x4FE1;&#x606F;&#xFF1A;</p>
 <blockquote>
