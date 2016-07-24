@@ -4,9 +4,9 @@
   
     
     <entry>
-      <title><![CDATA[Android中你还在用HashMap<Integer,Object>吗？]]></title>
+      <title><![CDATA[Android中你还在用HashMap&lt;Integer,Object&gt;吗？]]></title>
       <url>https://chacojack.github.io/2016/07/24/Android%E4%B8%AD%E4%BD%A0%E8%BF%98%E5%9C%A8%E7%94%A8HashMap-Integer-Object-%E5%90%97%EF%BC%9F/</url>
-      <content type="html"><![CDATA[<p>Android&#x4E2D;&#x4F60;&#x8FD8;&#x5728;&#x4F7F;&#x7528;HashMap<integer,object>&#x5417;&#xFF1F;</integer,object></p>
+      <content type="html"><![CDATA[<p>Android&#x4E2D;&#x4F60;&#x8FD8;&#x5728;&#x4F7F;&#x7528;<code>HashMap&lt;Integer,Object&gt;</code>&#x5417;&#xFF1F;</p>
 <p>&#x4F17;&#x6240;&#x5468;&#x77E5;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8981;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x5230;&#x5BF9;&#x8C61;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x60F3;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;<code>Map&lt;int,Object&gt;</code>&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x4F7F;&#x7528;<code>Map&lt;Integer,Object&gt;</code>&#x3002;</p>
 <p><strong>&#x660E;&#x660E;&#x53EA;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x6570;&#x636E;&#xFF0C;&#x5374;&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x7C7B;&#x3002;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x6740;&#x9E21;&#x7528;&#x725B;&#x5200;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x79CD;&#x6D6A;&#x8D39;&#x3002;</strong></p>
 <p>&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x62BC;&#x97F5;&#x3002;</p>
