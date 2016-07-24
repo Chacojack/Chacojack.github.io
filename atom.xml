@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chacojack.github.io/"/>
-  <updated>2016-07-24T06:34:16.000Z</updated>
+  <updated>2016-07-24T06:36:12.000Z</updated>
   <id>https://chacojack.github.io/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Android中你还在用HashMap\&lt;Integer,Object&gt;吗？</title>
+    <title>Android中你还在用HashMap&lt;Integer,Object&gt;吗？</title>
     <link href="https://chacojack.github.io/2016/07/24/Android%E4%B8%AD%E4%BD%A0%E8%BF%98%E5%9C%A8%E7%94%A8HashMap-Integer-Object-%E5%90%97%EF%BC%9F/"/>
     <id>https://chacojack.github.io/2016/07/24/Android中你还在用HashMap-Integer-Object-吗？/</id>
     <published>2016-07-24T02:25:17.000Z</published>
-    <updated>2016-07-24T06:34:16.000Z</updated>
+    <updated>2016-07-24T06:36:12.000Z</updated>
     
     <content type="html">&lt;p&gt;Android&amp;#x4E2D;&amp;#x4F60;&amp;#x8FD8;&amp;#x5728;&amp;#x4F7F;&amp;#x7528;HashMap&lt;integer,object&gt;&amp;#x5417;&amp;#xFF1F;&lt;/integer,object&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#x4F17;&amp;#x6240;&amp;#x5468;&amp;#x77E5;&amp;#xFF0C;&amp;#x5F53;&amp;#x6211;&amp;#x4EEC;&amp;#x8981;&amp;#x7EF4;&amp;#x62A4;&amp;#x4E00;&amp;#x4E2A;&amp;#x6574;&amp;#x578B;&amp;#x5230;&amp;#x5BF9;&amp;#x8C61;&amp;#x7684;&amp;#x6620;&amp;#x5C04;&amp;#x5173;&amp;#x7CFB;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#xFF0C;&amp;#x60F3;&amp;#x5B9A;&amp;#x4E49;&amp;#x4E00;&amp;#x4E2A;&lt;code&gt;Map&amp;lt;int,Object&amp;gt;&lt;/code&gt;&amp;#x4F1A;&amp;#x62A5;&amp;#x9519;&amp;#xFF0C;&amp;#x6211;&amp;#x4EEC;&amp;#x5FC5;&amp;#x987B;&amp;#x4F7F;&amp;#x7528;&lt;code&gt;Map&amp;lt;Integer,Object&amp;gt;&lt;/code&gt;&amp;#x3002;&lt;/p&gt;
