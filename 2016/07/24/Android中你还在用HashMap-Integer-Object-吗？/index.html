@@ -1,0 +1,997 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Android&amp;#x4E2D;&amp;#x4F60;&amp;#x8FD8;&amp;#x5728;&amp;#x4F7F;&amp;#x7528;HashMap&amp;#x5417;&amp;#xFF1F;
+&amp;#x4F17;&amp;#x6240;&amp;#x5468;&amp;#x77E5;&amp;#xFF0C;&amp;#x5F53;&amp;#x6211;&amp;#x4EEC;&amp;#x8981;&amp;#x7EF4;&amp;#x62A4;&amp;#x4E00;&amp;#x4E2A;&amp;#x6574;&amp;#x578B;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android中你还在用HashMap\<Integer,Object\>吗？">
+<meta property="og:url" content="https://chacojack.github.io/2016/07/24/Android中你还在用HashMap-Integer-Object-吗？/index.html">
+<meta property="og:site_name" content="ZejianChai's Note">
+<meta property="og:description" content="Android&amp;#x4E2D;&amp;#x4F60;&amp;#x8FD8;&amp;#x5728;&amp;#x4F7F;&amp;#x7528;HashMap&amp;#x5417;&amp;#xFF1F;
+&amp;#x4F17;&amp;#x6240;&amp;#x5468;&amp;#x77E5;&amp;#xFF0C;&amp;#x5F53;&amp;#x6211;&amp;#x4EEC;&amp;#x8981;&amp;#x7EF4;&amp;#x62A4;&amp;#x4E00;&amp;#x4E2A;&amp;#x6574;&amp;#x578B;&amp;">
+<meta property="og:image" content="https://chacojack.github.io/2016/07/24/Android中你还在用HashMap-Integer-Object-吗？/1.jpg">
+<meta property="og:updated_time" content="2016-07-24T06:19:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android中你还在用HashMap\<Integer,Object\>吗？">
+<meta name="twitter:description" content="Android&amp;#x4E2D;&amp;#x4F60;&amp;#x8FD8;&amp;#x5728;&amp;#x4F7F;&amp;#x7528;HashMap&amp;#x5417;&amp;#xFF1F;
+&amp;#x4F17;&amp;#x6240;&amp;#x5468;&amp;#x77E5;&amp;#xFF0C;&amp;#x5F53;&amp;#x6211;&amp;#x4EEC;&amp;#x8981;&amp;#x7EF4;&amp;#x62A4;&amp;#x4E00;&amp;#x4E2A;&amp;#x6574;&amp;#x578B;&amp;">
+<meta name="twitter:image" content="https://chacojack.github.io/2016/07/24/Android中你还在用HashMap-Integer-Object-吗？/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://chacojack.github.io/2016/07/24/Android中你还在用HashMap-Integer-Object-吗？/"/>
+
+  <title> Android中你还在用HashMap\<Integer,Object\>吗？ | ZejianChai's Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZejianChai's Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Android开发者</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android中你还在用HashMap\<Integer,Object\>吗？
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-24T10:25:17+08:00" content="2016-07-24">
+              2016-07-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/24/Android中你还在用HashMap-Integer-Object-吗？/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/Android中你还在用HashMap-Integer-Object-吗？/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/24/Android中你还在用HashMap-Integer-Object-吗？/" class="leancloud_visitors" data-flag-title="Android中你还在用HashMap\<Integer,Object\>吗？">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Android&#x4E2D;&#x4F60;&#x8FD8;&#x5728;&#x4F7F;&#x7528;HashMap<integer,object>&#x5417;&#xFF1F;</integer,object></p>
+<p>&#x4F17;&#x6240;&#x5468;&#x77E5;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x8981;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x5230;&#x5BF9;&#x8C61;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x60F3;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;<code>Map&lt;int,Object&gt;</code>&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x6211;&#x4EEC;&#x5FC5;&#x987B;&#x4F7F;&#x7528;<code>Map&lt;Integer,Object&gt;</code>&#x3002;</p>
+<p><strong>&#x660E;&#x660E;&#x53EA;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x6570;&#x636E;&#xFF0C;&#x5374;&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x7C7B;&#x3002;&#x8FD9;&#x5E76;&#x4E0D;&#x662F;&#x6740;&#x9E21;&#x7528;&#x725B;&#x5200;&#xFF0C;&#x800C;&#x662F;&#x4E00;&#x79CD;&#x6D6A;&#x8D39;&#x3002;</strong></p>
+<p>&#x662F;&#x4E0D;&#x662F;&#x5F88;&#x62BC;&#x97F5;&#x3002;</p>
+<h1 id="SparseArray&#x7684;&#x7B80;&#x4ECB;"><a href="#SparseArray&#x7684;&#x7B80;&#x4ECB;" class="headerlink" title="SparseArray&#x7684;&#x7B80;&#x4ECB;"></a>SparseArray&#x7684;&#x7B80;&#x4ECB;</h1><p><code>SparseArray</code>&#xFF0C;&#x662F;<code>android.util</code>&#x5305;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x4ECB;&#x7ECD;&#x662F;&#x8FD9;&#x6837;&#x7684;&#xFF1A;</p>
+<blockquote>
+<p>SparseArrays map integers to Objects.  Unlike a normal array of Objects, there can be gaps in the indices.  It is intended to be more memory efficient than using a HashMap to map Integers to Objects, both because it avoids auto-boxing keys and its data structure doesn&#x2019;t rely on an extra entry object for each mapping.</p>
+</blockquote>
+<p>&#x610F;&#x601D;&#x5C31;&#x662F;(&#x7FFB;&#x8BD1;&#x7684;&#x4E0D;&#x597D;&#xFF0C;&#x52FF;&#x55B7;)&#xFF1A;</p>
+<blockquote>
+<p>SparseArrays&#x662F;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x5230;&#x5BF9;&#x8C61;&#x7684;&#x6620;&#x5C04;&#xFF0C;&#x5B83;&#x4E0D;&#x50CF;&#x4E00;&#x4E2A;&#x6B63;&#x5E38;&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x7EC4;&#xFF0C;&#x5728;&#x7D22;&#x5F15;&#x5904;&#x53EF;&#x4EE5;&#x662F;&#x7A7A;&#x7684;&#x3002;&#x4ED6;&#x662F;&#x4E3A;&#x4E86;&#x6BD4;HashMap<integer,objects>&#x63D0;&#x4F9B;&#x66F4;&#x9AD8;&#x7684;&#x5185;&#x5B58;&#x6027;&#x80FD;&#x800C;&#x8BBE;&#x8BA1;&#x7684;&#x3002;&#x539F;&#x56E0;&#x6709;&#x4E24;&#x70B9;&#xFF1A;</integer,objects></p>
+<ol>
+<li>&#x5B83;&#x907F;&#x514D;&#x4E86;&#x5BF9;key&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x64CD;&#x4F5C;&#xFF1B;</li>
+<li>&#x6BCF;&#x4E2A;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x4E5F;&#x4E0D;&#x662F;&#x4F9D;&#x8D56;&#x989D;&#x5916;&#x7684;&#x5BF9;&#x8C61;&#x3002;</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<p>&#x601D;&#x8003;&#xFF1A;</p>
+<ol>
+<li>&#x5B83;&#x8981;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x7684;&#xFF1F;&#x4F7F;&#x7528;&#x8D77;&#x6765;&#x548C;HashMap&#x6709;&#x591A;&#x5927;&#x533A;&#x522B;&#xFF1F;</li>
+<li>&#x5B83;&#x662F;&#x5982;&#x4F55;&#x63D0;&#x9AD8;&#x5185;&#x5B58;&#x6027;&#x80FD;&#x7684;&#xFF1F;&#x6709;&#x6CA1;&#x6709;&#x8D1F;&#x4F5C;&#x7528;&#xFF1F;</li>
+</ol>
+<h1 id="SparseArray&#x7684;&#x4F7F;&#x7528;"><a href="#SparseArray&#x7684;&#x4F7F;&#x7528;" class="headerlink" title="SparseArray&#x7684;&#x4F7F;&#x7528;"></a>SparseArray&#x7684;&#x4F7F;&#x7528;</h1><p>&#x57FA;&#x672C;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x53CA;&#x4E0E;Map&#x7684;&#x4F7F;&#x7528;&#x533A;&#x522B;&#xFF1A;&#x4E00;&#x8D77;&#x6765;&#x770B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//&#x5B9A;&#x4E49;</div><div class="line">SparseArray&lt;Object&gt; sparseArray = new SparseArray&lt;&gt;() ;</div><div class="line">Map&lt;Integer,Object&gt; map = new HashMap&lt;&gt;() ;</div><div class="line">//&#x6DFB;&#x52A0;&#x6570;&#x636E;</div><div class="line">sparseArray.put(1,new Object());</div><div class="line">map.put(1,new Object()) ;</div><div class="line">//&#x53D6;&#x6570;&#x636E;</div><div class="line">Object o1 = sparseArray.get(1) ;</div><div class="line">Object o2 = map.get(1) ;</div><div class="line">//&#x5220;&#x9664;&#x6570;&#x636E;</div><div class="line">sparseArray.remove(1);</div><div class="line">Object o3 = map.remove(1);</div></pre></td></tr></table></figure>
+<p>&#x5728;&#x57FA;&#x672C;&#x7684;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;SparseArray&#x4E0E;Map&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x57FA;&#x672C;&#x4E0A;&#x4E00;&#x6A21;&#x4E00;&#x6837;&#x3002;&#x7EC6;&#x5FAE;&#x533A;&#x522B;&#x5C31;&#x662F;SparseArray&#x7684;remove&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x4E0D;&#x8FC7;&#x8FD9;&#x65E0;&#x4F24;&#x5927;&#x96C5;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x5B8C;&#x5168;&#x628A;&#x5B83;&#x6309;&#x7167;Map&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x3002;</p>
+<h1 id="SparseArray&#x5982;&#x4F55;&#x63D0;&#x9AD8;&#x5185;&#x5B58;&#x6027;&#x80FD;&#x7684;"><a href="#SparseArray&#x5982;&#x4F55;&#x63D0;&#x9AD8;&#x5185;&#x5B58;&#x6027;&#x80FD;&#x7684;" class="headerlink" title="SparseArray&#x5982;&#x4F55;&#x63D0;&#x9AD8;&#x5185;&#x5B58;&#x6027;&#x80FD;&#x7684;"></a>SparseArray&#x5982;&#x4F55;&#x63D0;&#x9AD8;&#x5185;&#x5B58;&#x6027;&#x80FD;&#x7684;</h1><p>&#x4ECE;<code>SparseArray</code>&#x7684;&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF1A;</p>
+<h2 id="&#x6210;&#x5458;&#x53D8;&#x91CF;"><a href="#&#x6210;&#x5458;&#x53D8;&#x91CF;" class="headerlink" title="&#x6210;&#x5458;&#x53D8;&#x91CF;"></a>&#x6210;&#x5458;&#x53D8;&#x91CF;</h2><p>&#x610F;&#x601D;&#x770B;&#x540D;&#x5B57;&#x90FD;&#x77E5;&#x9053;&#x4E86;&#x3002;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">private int[] mKeys;</div><div class="line">private Object[] mValues;</div><div class="line">private int mSize;</div></pre></td></tr></table></figure>
+<p>&#x5B83;&#x7684;key&#x503C;&#x4F7F;&#x7528;&#x7684;&#x662F;<code>int</code>&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;<code>Integer</code>&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x5C31;&#x907F;&#x514D;&#x4E86;&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#x64CD;&#x4F5C;&#x3002;&#x5B83;&#x7684;Key&#x548C;Value&#x5206;&#x522B;&#x662F;&#x5B58;&#x50A8;&#x5728;&#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#x3002;&#x8FD9;&#x5C31;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x989D;&#x5916;&#x7684;&#x5BF9;&#x8C61;&#x6765;&#x7EF4;&#x62A4;key&#x548C;value&#x4E4B;&#x95F4;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x3002;&#x56E0;&#x6B64;&#x5B83;&#x7684;&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x6548;&#x7387;&#x975E;&#x5E38;&#x9AD8;&#x3002;</p>
+<blockquote>
+<p>&#x81EA;&#x52A8;&#x88C5;&#x7BB1;&#xFF0C;&#x4E3E;&#x4E2A;&#x6817;&#x5B50;&#x4FBF;&#x4E8E;&#x7406;&#x89E3;&#xFF1A;<code>Integer integer = 1 ;</code></p>
+</blockquote>
+<h2 id="&#x4E3B;&#x8981;&#x65B9;&#x6CD5;"><a href="#&#x4E3B;&#x8981;&#x65B9;&#x6CD5;" class="headerlink" title="&#x4E3B;&#x8981;&#x65B9;&#x6CD5;"></a>&#x4E3B;&#x8981;&#x65B9;&#x6CD5;</h2><p>&#x65E2;&#x7136;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x989D;&#x5916;&#x7684;&#x5BF9;&#x8C61;&#x6765;&#x7EF4;&#x62A4;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x770B;&#x770B;&#x5B83;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF1A;</p>
+<h3 id="put"><a href="#put" class="headerlink" title="put"></a>put</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public void put(int key, E value) {</div><div class="line">    int i = ContainerHelpers.binarySearch(mKeys, mSize, key);</div><div class="line"></div><div class="line">    if (i &gt;= 0) {</div><div class="line">        mValues[i] = value;</div><div class="line">    } else {</div><div class="line">        i = ~i;</div><div class="line"></div><div class="line">        if (i &lt; mSize &amp;&amp; mValues[i] == DELETED) {</div><div class="line">            mKeys[i] = key;</div><div class="line">            mValues[i] = value;</div><div class="line">            return;</div><div class="line">        }</div><div class="line"></div><div class="line">        if (mGarbage &amp;&amp; mSize &gt;= mKeys.length) {</div><div class="line">            gc();</div><div class="line"></div><div class="line">            // Search again because indices may have changed.</div><div class="line">            i = ~ContainerHelpers.binarySearch(mKeys, mSize, key);</div><div class="line">        }</div><div class="line"></div><div class="line">        mKeys = GrowingArrayUtils.insert(mKeys, mSize, i, key);</div><div class="line">        mValues = GrowingArrayUtils.insert(mValues, mSize, i, value);</div><div class="line">        mSize++;</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>put&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<ol>
+<li>&#x4F7F;&#x7528;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7B97;&#x6CD5;&#x67E5;&#x627E;key&#x5728;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x5982;&#x679C;&#x6709;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x4F4D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x6BD4;&#x5B83;&#x5927;&#x7684;&#x503C;&#x7684;&#x4F4D;&#x7F6E;&#x7684;&#x53D6;&#x53CD;&#x503C;&#x3002;</li>
+<li>i&gt;=0 &#x5373;&#x662F;&#x5DF2;&#x7ECF;&#x5305;&#x542B;&#x4E86;&#x8BE5;&#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x76F4;&#x63A5;&#x8D4B;&#x503C;</li>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5305;&#x542B;&#x8BE5;&#x503C;&#xFF0C;&#x4E2D;&#x95F4;&#x4E24;&#x4E2A;&#x5224;&#x65AD;&#x5148;&#x5FFD;&#x7565;&#xFF0C;&#x770B;&#x5B8C;<code>remove</code>&#x518D;&#x6765;&#x770B;&#xFF0C;&#x5206;&#x522B;&#x5728;&#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#x4E2D;&#x63D2;&#x5165;&#x503C;&#x3002;</li>
+</ol>
+<p>&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<p>&#x4F7F;&#x7528;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x662F;<code>O(logn)</code>&#xFF0C;&#x800C;&#x63D2;&#x5165;&#x64CD;&#x4F5C;&#x4E2D;&#x6D89;&#x53CA;&#x5230;&#x4E86;&#x5BF9;&#x8C61;&#x7684;&#x79FB;&#x52A8;&#x3002;&#x800C;&#x5728;<code>HashMap</code>&#x4E2D;&#x7531;key&#x5F97;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;&#x662F;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x662F;<code>O(1)</code>&#xFF0C;&#x800C;&#x4E14;&#x6CA1;&#x6709;&#x63D2;&#x5165;&#x64CD;&#x4F5C;&#x6CA1;&#x6709;&#x5BF9;&#x8C61;&#x7684;&#x79FB;&#x52A8;&#x3002;&#x8BE5;&#x8FC7;&#x7A0B;&#x662F;&#x7528;&#x65F6;&#x95F4;&#x6362;&#x7A7A;&#x95F4;&#x3002;</p>
+<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><p>get&#x65B9;&#x6CD5;&#x6700;&#x91CD;&#x8C03;&#x7528;&#x7684;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;&#x5176;&#x4E2D;<code>valueIfKeyNotFound</code>&#x4E3A;<code>null</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public E get(int key, E valueIfKeyNotFound) {</div><div class="line">    int i = ContainerHelpers.binarySearch(mKeys, mSize, key);</div><div class="line"></div><div class="line">    if (i &lt; 0 || mValues[i] == DELETED) {</div><div class="line">        return valueIfKeyNotFound;</div><div class="line">    } else {</div><div class="line">        return (E) mValues[i];</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x8FD9;&#x4E2A;&#x5C31;&#x5F88;&#x7B80;&#x5355;&#x4E86;&#xFF0C;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#x5BF9;&#x5E94;&#x4F4D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x8FD4;&#x56DE;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x5C31;&#x8FD4;&#x56DE;null&#xFF1B;&#x67E5;&#x627E;<code>O(logn)</code>&#xFF0C;<code>HashMap</code>&#x4E2D;&#x8BA1;&#x7B97;&#x662F;<code>O(1)</code>&#xFF1B;</p>
+<h3 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h3><p><code>remove</code>&#x65B9;&#x6CD5;&#x6700;&#x91CD;&#x8C03;&#x7528;&#x7684;&#x662F;<code>delete</code>&#x65B9;&#x6CD5;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public void delete(int key) {</div><div class="line">    int i = ContainerHelpers.binarySearch(mKeys, mSize, key);</div><div class="line"></div><div class="line">    if (i &gt;= 0) {</div><div class="line">        if (mValues[i] != DELETED) {</div><div class="line">            mValues[i] = DELETED;</div><div class="line">            mGarbage = true;</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x4E8C;&#x5206;&#x67E5;&#x627E;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x503C;&#x6807;&#x8BB0;&#x4E3A;<code>DELETED</code>&#xFF0C;&#x7136;&#x540E;&#x628A;<code>mGarbage</code>&#x6539;&#x4E3A;true&#xFF1B;</p>
+<p>&#x901A;&#x8FC7;&#x4F7F;&#x7528;<code>DELETED</code>&#x6807;&#x8BB0;&#x51CF;&#x5C11;&#x4E86;&#x6570;&#x636E;&#x79FB;&#x52A8;&#x9020;&#x6210;&#x7684;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x6D6A;&#x8D39;&#x3002;<code>mGarbage</code>&#x5176;&#x5B9E;&#x5728;<code>put</code>&#x65B9;&#x6CD5;&#x4E2D;&#x5C31;&#x6709;&#xFF0C;&#x8BF4;&#x5FFD;&#x7565;&#x4E86;&#xFF0C;&#x53EA;&#x662F;&#x6CA1;&#x6709;&#x8BB2;&#x3002;</p>
+<p>&#x73B0;&#x5728;&#x6765;&#x770B;&#x5176;&#x4E2D;&#x4E24;&#x4E2A;&#x5224;&#x65AD;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">if (i &lt; mSize &amp;&amp; mValues[i] == DELETED) {</div><div class="line">    mKeys[i] = key;</div><div class="line">    mValues[i] = value;</div><div class="line">    return;</div><div class="line">}</div><div class="line"></div><div class="line">if (mGarbage &amp;&amp; mSize &gt;= mKeys.length) {</div><div class="line">    gc();</div><div class="line"></div><div class="line">    // Search again because indices may have changed.</div><div class="line">    i = ~ContainerHelpers.binarySearch(mKeys, mSize, key);</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x7B2C;&#x4E00;&#x4E2A;if&#x662F;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x63D2;&#x5165;&#x7684;&#x4F4D;&#x7F6E;&#x662F;<code>DELETED</code>&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x76F4;&#x63A5;&#x66FF;&#x6362;&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x4E2A;if&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5783;&#x573E;&#xFF0C;&#x53C8;&#x5E76;&#x4E14;&#x7A7A;&#x95F4;&#x4E0D;&#x591F;&#x4E86;&#xFF0C;&#x5C31;&#x6267;&#x884C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x64CD;&#x4F5C;&#x5E76;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x4F4D;&#x7F6E;&#x3002;</p>
+<h3 id="gc"><a href="#gc" class="headerlink" title="gc"></a>gc</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">private void gc() {</div><div class="line">    // Log.e(&quot;SparseArray&quot;, &quot;gc start with &quot; + mSize);</div><div class="line"></div><div class="line">    int n = mSize;</div><div class="line">    int o = 0;</div><div class="line">    int[] keys = mKeys;</div><div class="line">    Object[] values = mValues;</div><div class="line"></div><div class="line">    for (int i = 0; i &lt; n; i++) {</div><div class="line">        Object val = values[i];</div><div class="line"></div><div class="line">        if (val != DELETED) {</div><div class="line">            if (i != o) {</div><div class="line">                keys[o] = keys[i];</div><div class="line">                values[o] = val;</div><div class="line">                values[i] = null;</div><div class="line">            }</div><div class="line"></div><div class="line">            o++;</div><div class="line">        }</div><div class="line">    }</div><div class="line"></div><div class="line">    mGarbage = false;</div><div class="line">    mSize = o;</div><div class="line"></div><div class="line">    // Log.e(&quot;SparseArray&quot;, &quot;gc end with &quot; + mSize);</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x662F;&#x904D;&#x5386;&#x548C;&#x79FB;&#x52A8;&#x6570;&#x636E;&#x3002;<br>&#x4E00;&#x4E2A;&#x5783;&#x573E;&#x56DE;&#x6536;&#x662F;<code>O(n)</code>&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x3002;</p>
+<h3 id="&#x6269;&#x5C55;&#x5BB9;&#x91CF;"><a href="#&#x6269;&#x5C55;&#x5BB9;&#x91CF;" class="headerlink" title="&#x6269;&#x5C55;&#x5BB9;&#x91CF;"></a>&#x6269;&#x5C55;&#x5BB9;&#x91CF;</h3><p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5E94;&#x8BE5;&#x60F3;&#x5230;&#xFF0C;&#x5982;&#x679C;&#x5B83;&#x7684;&#x7A7A;&#x95F4;&#x4E0D;&#x591F;&#x4E86;&#x600E;&#x4E48;&#x529E;&#xFF1F;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5C31;&#x8981;&#x6269;&#x5C55;&#x5BB9;&#x91CF;&#x4E86;&#x3002;</p>
+<p>&#x8FD9;&#x4E2A;&#x5DE5;&#x4F5C;&#x4E3B;&#x8981;&#x662F;&#x5728;&#x63D2;&#x5165;&#x7684;&#x65F6;&#x5019;&#x505A;&#x7684;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public static &lt;T&gt; T[] insert(T[] array, int currentSize, int index, T element) {</div><div class="line">    assert currentSize &lt;= array.length;</div><div class="line"></div><div class="line">    if (currentSize + 1 &lt;= array.length) {</div><div class="line">        System.arraycopy(array, index, array, index + 1, currentSize - index);</div><div class="line">        array[index] = element;</div><div class="line">        return array;</div><div class="line">    }</div><div class="line"></div><div class="line">    //&#x4E0B;&#x9762;&#x7684;&#x662F;&#x5BB9;&#x91CF;&#x4E0D;&#x591F;&#x7684;&#x60C5;&#x51B5;</div><div class="line">    @SuppressWarnings(&quot;unchecked&quot;)</div><div class="line">    T[] newArray = ArrayUtils.newUnpaddedArray((Class&lt;T&gt;)array.getClass().getComponentType(),</div><div class="line">            growSize(currentSize)); </div><div class="line">    System.arraycopy(array, 0, newArray, 0, index);</div><div class="line">    newArray[index] = element;</div><div class="line">    System.arraycopy(array, index, newArray, index + 1, array.length - index);</div><div class="line">    return newArray;</div><div class="line">}</div></pre></td></tr></table></figure>
+<p>&#x5BB9;&#x91CF;&#x6269;&#x5C55;&#x7684;&#x7B97;&#x6CD5;&#x662F;<code>growSize</code>&#x63A7;&#x5236;&#x7684;&#xFF0C;&#x6E90;&#x7801;&#x9644;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0D;&#x89E3;&#x91CA;&#x4E86;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public static int growSize(int currentSize) {</div><div class="line">    return currentSize &lt;= 4 ? 8 : currentSize * 2;</div><div class="line">}</div></pre></td></tr></table></figure>
+<h1 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h1><ol>
+<li>SparseArray&#x662F;&#x4E3A;&#x4E86;&#x66FF;&#x6362;Map<integer,object>&#x800C;&#x8BBE;&#x8BA1;&#x7684;&#x3002;&#x5F53;&#x4F60;&#x8981;&#x4F7F;&#x7528;Map<integer,object>&#x65F6;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;SparseArray&#x3002;</integer,object></integer,object></li>
+<li>SparseArray&#x7684;&#x57FA;&#x672C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x4E0E;Map<integer,object>&#x4E00;&#x6837;&#xFF0C;&#x65B9;&#x6CD5;&#x540D;&#x4E5F;&#x4E00;&#x6837;&#x3002;&#x53EA;&#x662F;remove&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x3002;</integer,object></li>
+<li>SparseArray&#x6D88;&#x8017;&#x5185;&#x5B58;&#x6BD4;HashMap<integer,object>&#x5C11;&#xFF0C;&#x4F46;&#x662F;&#x901F;&#x5EA6;&#x7A0D;&#x6162;&#x3002;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x505A;&#x597D;&#x6743;&#x8861;&#x3002;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x5927;&#x6982;O(logn)&#x548C;O(1)&#x7684;&#x5DEE;&#x522B;&#x3002;</integer,object></li>
+</ol>
+<p>&#x5E0C;&#x671B;&#x5BF9;&#x4F60;&#x6709;&#x5E2E;&#x52A9;&#x3002;&#x770B;&#x6E90;&#x7801;&#x70E6;&#x4E86;&#xFF0C;&#x6700;&#x540E;&#x7ED9;&#x5927;&#x5BB6;&#x4E00;&#x4E2A;&#x798F;&#x5229;&#xFF1A;</p>
+<p><img src="/2016/07/24/Android&#x4E2D;&#x4F60;&#x8FD8;&#x5728;&#x7528;HashMap-Integer-Object-&#x5417;&#xFF1F;/1.jpg" alt=""></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/23/∫A/" rel="next" title="∫A">
+                <i class="fa fa-chevron-left"></i> ∫A
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/24/Android中你还在用HashMap-Integer-Object-吗？/"
+           data-title="Android中你还在用HashMap\<Integer,Object\>吗？" data-url="https://chacojack.github.io/2016/07/24/Android中你还在用HashMap-Integer-Object-吗？/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="柴泽建" />
+          <p class="site-author-name" itemprop="name">柴泽建</p>
+          <p class="site-description motion-element" itemprop="description">对代码永不满足</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Chacojack" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2703310877" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/dd5f6394457d/latest_articles" target="_blank" title="Jianshu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Jianshu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SparseArray的简介"><span class="nav-number">1.</span> <span class="nav-text">SparseArray的简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SparseArray的使用"><span class="nav-number">2.</span> <span class="nav-text">SparseArray的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SparseArray如何提高内存性能的"><span class="nav-number">3.</span> <span class="nav-text">SparseArray如何提高内存性能的</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#成员变量"><span class="nav-number">3.1.</span> <span class="nav-text">成员变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要方法"><span class="nav-number">3.2.</span> <span class="nav-text">主要方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#put"><span class="nav-number">3.2.1.</span> <span class="nav-text">put</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get"><span class="nav-number">3.2.2.</span> <span class="nav-text">get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remove"><span class="nav-number">3.2.3.</span> <span class="nav-text">remove</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gc"><span class="nav-number">3.2.4.</span> <span class="nav-text">gc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展容量"><span class="nav-number">3.2.5.</span> <span class="nav-text">扩展容量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">柴泽建</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jack-chai-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Lsvcc0AtrLqT6Pw3Cr7f8phj-gzGzoHsz", "HvTbRI5ugVcWRpBIMaPXB6XX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
