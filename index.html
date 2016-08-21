@@ -271,6 +271,151 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/21/RecyclerView源码分析-二-测绘于布局流程/" itemprop="url">
+                  RecyclerView源码分析(二)--测量流程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-21T13:04:41+08:00" content="2016-08-21">
+              2016-08-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/21/RecyclerView源码分析-二-测绘于布局流程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/21/RecyclerView源码分析-二-测绘于布局流程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/08/21/RecyclerView源码分析-二-测绘于布局流程/" class="leancloud_visitors" data-flag-title="RecyclerView源码分析(二)--测量流程">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>&#x76F8;&#x5173;&#x7CFB;&#x5217;&#x6587;&#x7AE0;</p>
+<p><a href="https://chacojack.github.io/2016/08/20/RecyclerView%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%80-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/">RecyclerView&#x6E90;&#x7801;&#x5206;&#x6790;(&#x4E00;)&#x2013;&#x6574;&#x4F53;&#x8BBE;&#x8BA1;</a></p>
+</blockquote>
+<p>&#x5728;&#x4E0A;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E2D;&#x4E3B;&#x8981;&#x8BB2;&#x89E3;&#x4E86;RecyclerView&#x5185;&#x90E8;&#x7684;&#x5927;&#x4F53;&#x8BBE;&#x8BA1;&#x7ED3;&#x6784;&#x3002;&#x56E0;&#x4E3A;&#x662F;&#x4ECE;&#x7ED3;&#x6784;&#x51FA;&#x53D1;&#xFF0C;&#x6240;&#x4EE5;&#x591A;&#x5C11;&#x5BF9;&#x7EC6;&#x8282;&#x8BB2;&#x7684;&#x4E91;&#x91CC;&#x96FE;&#x91CC;&#x3002;&#x90A3;&#x4E48;&#x4ECE;&#x8FD9;&#x4E00;&#x7BC7;&#x5F00;&#x59CB;&#x8981;&#x843D;&#x5B9E;&#x5230;&#x4EE3;&#x7801;&#x7EC6;&#x8282;&#x4E2D;&#x4E86;&#x3002;</p>
+<p>&#x65E2;&#x7136;RecyclerView&#x662F;&#x4E00;&#x4E2A;GroupView&#xFF0C;&#x90A3;&#x4E48;&#x4E5F;&#x5C31;&#x662F;&#x4E00;&#x4E2A;View&#x3002;&#x90A3;&#x4E48;View&#x7684;&#x7ED8;&#x5236;&#x8FC7;&#x7A0B;&#x662F;measure&#x5230;layout&#x5230;draw&#x7684;&#x4E00;&#x4E2A;&#x987A;&#x5E8F;&#x3002;&#x7136;&#x800C;&#x4E00;&#x4E2A;GroupView&#x7684;&#x76EE;&#x7684;&#x662F;&#x76DB;&#x653E;&#x5176;&#x5B83;View&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x8FD8;&#x662F;&#x5176;measure&#x548C;layout&#x8FC7;&#x7A0B;&#x3002;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x4ECA;&#x5929;&#x5C31;&#x6765;&#x770B;&#x770B;RecyclerView&#x7684;measure&#x8FC7;&#x7A0B;&#x3002;</p>
+<blockquote>
+<p>PS:&#x6E90;&#x7801;&#x7248;&#x672C;&#x4E3A;24.1.1&#xFF0C;&#x5982;&#x679C;&#x4E0B;&#x9762;&#x4E0E;&#x4F60;&#x7684;&#x6E90;&#x7801;&#x6709;&#x51FA;&#x5165;&#xFF0C;&#x8BF7;&#x6838;&#x5B9E;&#x7248;&#x672C;&#x662F;&#x5426;&#x76F8;&#x540C;&#x3002;</p>
+</blockquote>
+<h1 id="RecyclerView&#x7684;Measure&#x8FC7;&#x7A0B;"><a href="#RecyclerView&#x7684;Measure&#x8FC7;&#x7A0B;" class="headerlink" title="RecyclerView&#x7684;Measure&#x8FC7;&#x7A0B;"></a>RecyclerView&#x7684;Measure&#x8FC7;&#x7A0B;</h1><p>&#x5982;&#x679C;&#x4F60;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x4E5F;&#x6253;&#x5F00;&#x4E86;&#x6E90;&#x7801;&#xFF0C;&#x4F60;&#x5E94;&#x8BE5;&#x4F1A;&#x53D1;&#x73B0;RecyclerView&#x7684;onMeasure&#x65B9;&#x6CD5;&#x5F88;&#x957F;&#x3002;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5148;&#x5C06;&#x5176;&#x5206;&#x60C5;&#x51B5;&#x8BA8;&#x8BBA;&#x3002;</p>
+<ol>
+<li>&#x6CA1;&#x6709;LayoutManager&#x7684;&#x60C5;&#x51B5;</li>
+<li>&#x6709;LayoutManager&#x5E76;&#x5F00;&#x542F;&#x4E86;&#x81EA;&#x52A8;&#x6D4B;&#x91CF;</li>
+<li>&#x6709;LayoutManager&#x4F46;&#x6CA1;&#x6709;&#x5F00;&#x542F;&#x81EA;&#x52A8;&#x6D4B;&#x91CF;</li>
+</ol>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/08/21/RecyclerView源码分析-二-测绘于布局流程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/20/RecyclerView源码分析-一-整体设计/" itemprop="url">
                   RecyclerView源码分析(一)--整体设计
                 </a>
@@ -1406,7 +1551,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
