@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chacojack.github.io/"/>
-  <updated>2016-09-07T15:02:45.000Z</updated>
+  <updated>2016-09-08T13:01:55.000Z</updated>
   <id>https://chacojack.github.io/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>让你的Android Studio性感起来--Sexy Editor</title>
+    <link href="https://chacojack.github.io/2016/09/08/%E8%AE%A9%E4%BD%A0%E7%9A%84Android-Studio%E6%80%A7%E6%84%9F%E8%B5%B7%E6%9D%A5-Sexy-Editor/"/>
+    <id>https://chacojack.github.io/2016/09/08/让你的Android-Studio性感起来-Sexy-Editor/</id>
+    <published>2016-09-08T12:15:02.000Z</published>
+    <updated>2016-09-08T13:01:55.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&amp;#x6628;&amp;#x5929;&amp;#x56E0;&amp;#x4E3A;&amp;#x7684;&amp;#x5728;&amp;#x5FAE;&amp;#x4FE1;&amp;#x670B;&amp;#x53CB;&amp;#x5708;&amp;#x4E2D;&amp;#x70AB;&amp;#x8000;&amp;#x4E86;&amp;#x4E00;&amp;#x4E0B;&amp;#x81EA;&amp;#x5DF1;&amp;#x5728;&amp;#x5BB6;&amp;#x529E;&amp;#x516C;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#xFF0C;&amp;#x5176;&amp;#x4E2D;&amp;#x6211;&amp;#x7684;IDE&amp;#x4E0D;&amp;#x51FA;&amp;#x610F;&amp;#x5916;&amp;#x7684;&amp;#x5F15;&amp;#x8D77;&amp;#x7684;&amp;#x5927;&amp;#x5BB6;&amp;#x7684;&amp;#x5173;&amp;#x6CE8;&amp;#xFF0C;&amp;#x7136;&amp;#x540E;&amp;#x6709;&amp;#x4E9B;&amp;#x4EBA;&amp;#x95EE;&amp;#x6211;&amp;#x7684;Android Studio&amp;#x4E0A;&amp;#x7F16;&amp;#x8F91;&amp;#x533A;&amp;#x7684;&amp;#x80CC;&amp;#x666F;&amp;#x56FE;&amp;#x7247;&amp;#x662F;&amp;#x600E;&amp;#x4E48;&amp;#x5F04;&amp;#x7684;&amp;#x3002;&lt;/p&gt;
+&lt;p&gt;&amp;#x90A3;&amp;#x4E48;&amp;#x597D;&amp;#xFF0C;&amp;#x4ECA;&amp;#x5929;&amp;#x5199;&amp;#x8FD9;&amp;#x7BC7;&amp;#x6587;&amp;#x7AE0;&amp;#x6765;&amp;#x6559;&amp;#x5927;&amp;#x5BB6;&amp;#x8BA9;&amp;#x4F60;&amp;#x7684;Android Studio&amp;#x6027;&amp;#x611F;&amp;#x8D77;&amp;#x6765;&amp;#x3002;&amp;#x8FD9;&amp;#x91CC;&amp;#x4F7F;&amp;#x7528;&amp;#x5230;&amp;#x7684;&amp;#x63D2;&amp;#x4EF6;&amp;#x5C31;&amp;#x662F;Sexy Editor&amp;#x3002;&amp;#x5148;&amp;#x4E0A;&amp;#x51E0;&amp;#x5F20;&amp;#x6548;&amp;#x679C;&amp;#x56FE;&amp;#x3002;&lt;/p&gt;
+&lt;p&gt;&amp;#x8FD9;&amp;#x4E2A;&amp;#x662F;&amp;#x6211;&amp;#x5728;&amp;#x7528;&amp;#x7684;&amp;#xFF1A;&lt;br&gt;&lt;img src=&quot;/2016/09/08/&amp;#x8BA9;&amp;#x4F60;&amp;#x7684;Android-Studio&amp;#x6027;&amp;#x611F;&amp;#x8D77;&amp;#x6765;-Sexy-Editor/1.png&quot; alt=&quot;&amp;#x91D1;&amp;#x6728;&amp;#x7814;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x5F04;&amp;#x6210;&amp;#x8FD9;&amp;#x79CD;&amp;#xFF1A;&lt;br&gt;&lt;img src=&quot;/2016/09/08/&amp;#x8BA9;&amp;#x4F60;&amp;#x7684;Android-Studio&amp;#x6027;&amp;#x611F;&amp;#x8D77;&amp;#x6765;-Sexy-Editor/2.png&quot; alt=&quot;&amp;#x51E0;&amp;#x4F55;&amp;#x98CE;&amp;#x683C;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x4E5F;&amp;#x53EF;&amp;#x4EE5;&amp;#x5F04;&amp;#x6210;&amp;#x98CE;&amp;#x666F;&amp;#x7684;&amp;#x7684;&amp;#xFF1A;&lt;br&gt;&lt;img src=&quot;/2016/09/08/&amp;#x8BA9;&amp;#x4F60;&amp;#x7684;Android-Studio&amp;#x6027;&amp;#x611F;&amp;#x8D77;&amp;#x6765;-Sexy-Editor/6.png&quot; alt=&quot;&amp;#x98CE;&amp;#x666F;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x4F46;&amp;#x6211;&amp;#x89C9;&amp;#x5F97;&amp;#x4F60;&amp;#x80AF;&amp;#x5B9A;&amp;#x60F3;&amp;#x8981;&amp;#x8FD9;&amp;#x6837;&amp;#xFF0C;&amp;#x5988;&amp;#x5988;&amp;#x518D;&amp;#x4E5F;&amp;#x4E0D;&amp;#x7528;&amp;#x62C5;&amp;#x5FC3;&amp;#x6211;&amp;#x7684;&amp;#x7F16;&amp;#x7A0B;&amp;#x4E86;&amp;#xFF1A;&lt;br&gt;&lt;img src=&quot;/2016/09/08/&amp;#x8BA9;&amp;#x4F60;&amp;#x7684;Android-Studio&amp;#x6027;&amp;#x611F;&amp;#x8D77;&amp;#x6765;-Sexy-Editor/7.png&quot; alt=&quot;&amp;#x7A0B;&amp;#x5E8F;&amp;#x5458;&amp;#x9F13;&amp;#x52B1;&amp;#x5E08;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x90A3;&amp;#x4E48;&amp;#x597D;&amp;#xFF0C;Follow me&amp;#x3002;&lt;/p&gt;
+&lt;h2 id=&quot;Step-1-&amp;#x5B89;&amp;#x88C5;Sexy-Editor&amp;#x63D2;&amp;#x4EF6;&quot;&gt;&lt;a href=&quot;#Step-1-&amp;#x5B89;&amp;#x88C5;Sexy-Editor&amp;#x63D2;&amp;#x4EF6;&quot; class=&quot;headerlink&quot; title=&quot;Step 1 &amp;#x5B89;&amp;#x88C5;Sexy Editor&amp;#x63D2;&amp;#x4EF6;&quot;&gt;&lt;/a&gt;Step 1 &amp;#x5B89;&amp;#x88C5;Sexy Editor&amp;#x63D2;&amp;#x4EF6;&lt;/h2&gt;&lt;p&gt;&lt;code&gt;command&amp;#xFF0B;&amp;#xFF0C;&lt;/code&gt;&amp;#x6253;&amp;#x5F00;&lt;code&gt;Preferences&lt;/code&gt;&amp;#xFF0C;&amp;#x9009;&amp;#x62E9;&lt;code&gt;Plugins&lt;/code&gt;&amp;#xFF0C;&amp;#x7136;&amp;#x540E;&amp;#x70B9;&amp;#x51FB;&lt;code&gt;Browse repositories&lt;/code&gt;&amp;#x3002;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/09/08/&amp;#x8BA9;&amp;#x4F60;&amp;#x7684;Android-Studio&amp;#x6027;&amp;#x611F;&amp;#x8D77;&amp;#x6765;-Sexy-Editor/3.png&quot; alt=&quot;&amp;#x51E0;&amp;#x4F55;&amp;#x98CE;&amp;#x683C;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x4E4B;&amp;#x540E;&amp;#x5728;&amp;#x5F39;&amp;#x51FA;&amp;#x7684;&amp;#x5BF9;&amp;#x8BDD;&amp;#x6846;&amp;#x4E2D;&amp;#x641C;&amp;#x7D22;Sexy Editor&amp;#x3002;&amp;#x7136;&amp;#x540E;&amp;#x5B89;&amp;#x88C5;&amp;#x3002;&amp;#x5B8C;&amp;#x6210;&amp;#x4E4B;&amp;#x540E;&amp;#x91CD;&amp;#x542F;Android Studio&amp;#x3002;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/09/08/&amp;#x8BA9;&amp;#x4F60;&amp;#x7684;Android-Studio&amp;#x6027;&amp;#x611F;&amp;#x8D77;&amp;#x6765;-Sexy-Editor/4.png&quot; alt=&quot;&amp;#x51E0;&amp;#x4F55;&amp;#x98CE;&amp;#x683C;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Step-2-&amp;#x8BBE;&amp;#x7F6E;&amp;#x80CC;&amp;#x666F;&amp;#x56FE;&amp;#x7247;&quot;&gt;&lt;a href=&quot;#Step-2-&amp;#x8BBE;&amp;#x7F6E;&amp;#x80CC;&amp;#x666F;&amp;#x56FE;&amp;#x7247;&quot; class=&quot;headerlink&quot; title=&quot;Step 2 &amp;#x8BBE;&amp;#x7F6E;&amp;#x80CC;&amp;#x666F;&amp;#x56FE;&amp;#x7247;&quot;&gt;&lt;/a&gt;Step 2 &amp;#x8BBE;&amp;#x7F6E;&amp;#x80CC;&amp;#x666F;&amp;#x56FE;&amp;#x7247;&lt;/h2&gt;&lt;p&gt;&amp;#x4F9D;&amp;#x7136;&amp;#x6253;&amp;#x5F00;&lt;code&gt;command&amp;#xFF0B;&amp;#xFF0C;&lt;/code&gt;&amp;#x6253;&amp;#x5F00;&lt;code&gt;Preferences&lt;/code&gt;&amp;#x3002;&amp;#x5728;&amp;#x5DE6;&amp;#x8FB9;&amp;#x6700;&amp;#x4E0B;&amp;#x9762;&amp;#x7684;&lt;code&gt;Other Settings&lt;/code&gt;&amp;#x4E2D;&amp;#x627E;&amp;#x5230;&lt;code&gt;Sexy Editor&lt;/code&gt;&amp;#x3002;&amp;#x7136;&amp;#x540E;&amp;#x6EDA;&amp;#x5230;&amp;#x6700;&amp;#x4E0B;&amp;#x9762;&amp;#x3002;&amp;#x63D2;&amp;#x5165;&amp;#x60F3;&amp;#x8981;&amp;#x7684;&amp;#x56FE;&amp;#x7247;&amp;#xFF0C;&amp;#x7136;&amp;#x540E;&amp;#x518D;&amp;#x8BBE;&amp;#x7F6E;&amp;#x5BF9;&amp;#x5E94;&amp;#x7684;&amp;#x5927;&amp;#x5C0F;&amp;#x548C;&amp;#x900F;&amp;#x660E;&amp;#x5EA6;&amp;#x5C31;&amp;#x53EF;&amp;#x4EE5;&amp;#x4E86;&amp;#x3002;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2016/09/08/&amp;#x8BA9;&amp;#x4F60;&amp;#x7684;Android-Studio&amp;#x6027;&amp;#x611F;&amp;#x8D77;&amp;#x6765;-Sexy-Editor/5.png&quot; alt=&quot;&amp;#x51E0;&amp;#x4F55;&amp;#x98CE;&amp;#x683C;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x6709;&amp;#x7684;&amp;#x65F6;&amp;#x5019;&amp;#x8BBE;&amp;#x7F6E;&amp;#x5B8C;&amp;#x5E76;&amp;#x4E0D;&amp;#x4F1A;&amp;#x9A6C;&amp;#x4E0A;&amp;#x5E94;&amp;#x7528;&amp;#xFF0C;&amp;#x8FD9;&amp;#x4E2A;&amp;#x65F6;&amp;#x5019;&amp;#x91CD;&amp;#x542F;&amp;#x4E00;&amp;#x4E0B;Android Studio&amp;#x5C31;&amp;#x53EF;&amp;#x4EE5;&amp;#x4E86;&amp;#x3002;&lt;/p&gt;
+&lt;p&gt;&amp;#x597D;&amp;#x4E86;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x8FD9;&amp;#x4E48;&amp;#x7B80;&amp;#x5355;&amp;#xFF0C;&amp;#x53BB;&amp;#x8BA9;&amp;#x4F60;&amp;#x7684;Android Studio&amp;#x53D8;&amp;#x5F97;&amp;#x6027;&amp;#x611F;&amp;#x5427;&amp;#xFF0C;&amp;#x7F16;&amp;#x7A0B;&amp;#x4E0D;&amp;#x662F;&amp;#x67AF;&amp;#x71E5;&amp;#x7684;&amp;#x3002;&lt;/p&gt;
+&lt;p&gt;&amp;#x6211;&amp;#x77E5;&amp;#x9053;&amp;#x4F60;&amp;#x4EEC;&amp;#x7231;&amp;#x6253;&amp;#x8D4F;&amp;#xFF0C;&amp;#x672C;&amp;#x7BC7;&amp;#x6587;&amp;#x7AE0;&amp;#x4E0D;&amp;#x7528;&amp;#x6253;&amp;#x8D4F;&amp;#xFF0C;&amp;#x70B9;&amp;#x4E2A;&amp;#x559C;&amp;#x6B22;&amp;#x5C31;&amp;#x597D;&amp;#x4E86;&amp;#x3002;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;#x6628;&amp;#x5929;&amp;#x56E0;&amp;#x4E3A;&amp;#x7684;&amp;#x5728;&amp;#x5FAE;&amp;#x4FE1;&amp;#x670B;&amp;#x53CB;&amp;#x5708;&amp;#x4E2D;&amp;#x70AB;&amp;#x8000;&amp;#x4E86;&amp;#x4E00;&amp;#x4E0B;&amp;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://chacojack.github.io/categories/Android/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>RecyclerView源码分析(四)--动画流程</title>
