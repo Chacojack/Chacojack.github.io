@@ -97,7 +97,7 @@ RecyclerView&amp;#x6E90;&amp;#x7801;&amp;#x5206;&amp;#x6">
 &amp;#x76F8;&amp;#x5173;&amp;#x7CFB;&amp;#x5217;&amp;#x6587;&amp;#x7AE0;
 RecyclerView&amp;#x6E90;&amp;#x7801;&amp;#x5206;&amp;#x6">
 <meta property="og:image" content="https://chacojack.github.io/2016/09/07/RecyclerView源码分析-四-动画流程/01.png">
-<meta property="og:updated_time" content="2016-09-07T15:02:45.000Z">
+<meta property="og:updated_time" content="2016-09-09T15:42:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RecyclerView源码分析(四)--动画流程">
 <meta name="twitter:description" content="&amp;#x770B;&amp;#x5B8C;&amp;#x672C;&amp;#x6587;&amp;#x4F60;&amp;#x5927;&amp;#x6982;&amp;#x9700;&amp;#x8981; 8.3&amp;#x5206; &amp;#x7684;&amp;#x6BC5;&amp;#x529B;
@@ -360,6 +360,7 @@ RecyclerView&amp;#x6E90;&amp;#x7801;&amp;#x5206;&amp;#x6">
 <p>&#x76F8;&#x5173;&#x7CFB;&#x5217;&#x6587;&#x7AE0;</p>
 <p><a href="https://chacojack.github.io/2016/08/20/RecyclerView%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%80-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/">RecyclerView&#x6E90;&#x7801;&#x5206;&#x6790;(&#x4E00;)&#x2013;&#x6574;&#x4F53;&#x8BBE;&#x8BA1;</a></p>
 <p><a href="https://chacojack.github.io/2016/08/21/RecyclerView%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%BA%8C-%E6%B5%8B%E7%BB%98%E4%BA%8E%E5%B8%83%E5%B1%80%E6%B5%81%E7%A8%8B/">RecyclerView&#x6E90;&#x7801;&#x5206;&#x6790;(&#x4E8C;)&#x2013;&#x6D4B;&#x91CF;&#x6D41;&#x7A0B;</a></p>
+<p><a href="https://chacojack.github.io/2016/08/22/RecyclerView%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%89-%E5%B8%83%E5%B1%80%E6%B5%81%E7%A8%8B/">RecyclerView&#x6E90;&#x7801;&#x5206;&#x6790;(&#x4E09;)&#x2013;&#x5E03;&#x5C40;&#x6D41;&#x7A0B;</a></p>
 </blockquote>
 <p>&#x4E0A;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x8BB2;&#x4E86;RecyclerView&#x7684;&#x5E03;&#x5C40;&#x6D41;&#x7A0B;&#xFF0C;&#x53D1;&#x73B0;&#x91CC;&#x9762;&#x5927;&#x591A;&#x6570;&#x5185;&#x5BB9;&#x90FD;&#x662F;&#x548C;&#x52A8;&#x753B;&#x76F8;&#x5173;&#x7684;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x8FB9;&#x6587;&#x7AE0;&#x5C31;&#x5148;&#x8BB2;RecyclerView&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x6539;&#x53D8;&#x53D1;&#x51FA;&#x901A;&#x77E5;&#x5230;&#x64AD;&#x653E;&#x52A8;&#x753B;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x6D41;&#x7A0B;&#x3002;</p>
 <h1 id="RecyclerView&#x7684;&#x52A8;&#x753B;&#x6D41;&#x7A0B;"><a href="#RecyclerView&#x7684;&#x52A8;&#x753B;&#x6D41;&#x7A0B;" class="headerlink" title="RecyclerView&#x7684;&#x52A8;&#x753B;&#x6D41;&#x7A0B;"></a>RecyclerView&#x7684;&#x52A8;&#x753B;&#x6D41;&#x7A0B;</h1><p>&#x5BF9;&#x4E8E;RecyclerView&#x7684;&#x52A8;&#x753B;&#x6D41;&#x7A0B;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7684;&#x957F;&#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5148;&#x628A;&#x5927;&#x7684;&#x4E1C;&#x897F;&#x5206;&#x90E8;&#x5206;&#x6765;&#x770B;&#xFF0C;&#x4F1A;&#x8F7B;&#x677E;&#x4E00;&#x70B9;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x56DE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x5728;RecyclerView&#x4E2D;&#x6570;&#x636E;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8C03;&#x7528;&#x4EC0;&#x4E48;&#x51FD;&#x6570;&#x6765;&#x4F7F;&#x5176;&#x64AD;&#x653E;&#x52A8;&#x753B;&#x7684;&#x3002;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x8C03;&#x7528;Adapter&#x7684;&#x4EE5;&#x4E0B;&#x51FD;&#x6570;&#x3002;</p>
@@ -576,7 +577,7 @@ RecyclerView&amp;#x6E90;&amp;#x7801;&amp;#x5206;&amp;#x6">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
