@@ -10,6 +10,7 @@
 <h2 id="1-&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5E10;&#x53F7;"><a href="#1-&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5E10;&#x53F7;" class="headerlink" title="1 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5E10;&#x53F7;"></a>1 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5E10;&#x53F7;</h2><p>Maven&#x662F;&#x7531;Sonatype&#x7BA1;&#x7406;&#x7684;&#x3002;&#x90A3;&#x4E48;&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Sonatype&#x7684;&#x5E10;&#x53F7;&#x3002;<br><a href="https://issues.sonatype.org/secure/Signup!default.jspa" target="_blank" rel="external">Create your JIRA account</a></p>
 <p>&#x7136;&#x540E;&#x518D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5DE5;&#x7A0B;&#x7684;Ticket&#x3002;<br><a href="https://issues.sonatype.org/secure/CreateIssue.jspa?issuetype=21&amp;pid=10134" target="_blank" rel="external">Create a New Project ticket</a></p>
 <p>&#x586B;&#x597D;&#x4FE1;&#x606F;&#x5373;&#x53EF;&#x3002;</p>
+<a id="more"></a>
 <p>&#x7136;&#x540E;&#x5C31;&#x662F;&#x7B49;&#x548C;Sonatype&#x7684;&#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#x4EA4;&#x6D41;&#x3002;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x72B6;&#x6001;&#x4F1A;&#x6709;&#x5404;&#x79CD;&#x53D8;&#x5316;&#xFF0C;&#x53EA;&#x8981;&#x4E0D;&#x65AD;&#x548C;Sonatype&#x7684;&#x5DE5;&#x4F5C;&#x4EBA;&#x4EA4;&#x6D41;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF0C;&#x76F4;&#x5230;&#x5230;&#x4E86;<code>Resolved</code>&#x72B6;&#x6001;&#x3002;Sonatype&#x7684;&#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#x4F1A;&#x7ED9;&#x4F60;&#x4E00;&#x4E2A;&#x8FD9;&#x6837;&#x7684;<code>Comment</code>&#xFF1A;</p>
 <p><img src="/2016/10/02/&#x53D1;&#x5E03;&#x5F00;&#x6E90;&#x9879;&#x76EE;&#x5230;Maven&#x4ED3;&#x5E93;/3.png" alt=""></p>
 <p>&#x8FD9;&#x8BF4;&#x660E;&#x4F60;&#x62FF;&#x5230;&#x4E86;&#x5DE5;&#x7A0B;&#x7684;Ticket&#x3002;</p>
@@ -254,11 +255,12 @@
 <p>&#x4E8E;&#x662F;&#x6211;&#x5C06;&#x6587;&#x7AE0;&#x4E2D;&#x6E90;&#x7801;&#x4E0B;&#x8F7D;&#x4E0B;&#x6765;&#x770B;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x53D1;&#x73B0;&#x53EA;&#x652F;&#x6301;7&#x5F20;&#x56FE;&#xFF0C;&#x4E0D;&#x80FD;&#x591A;&#x4E0D;&#x80FD;&#x5C11;&#x3002;&#x800C;&#x4E14;&#x5728;&#x8BBE;&#x8BA1;&#x4E0A;&#x4E5F;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x6B20;&#x7F3A;&#x3002;&#x4E0D;&#x8FC7;&#x4E5F;&#x7ED9;&#x6211;&#x63D0;&#x62F1;&#x4E86;&#x4E00;&#x79CD;&#x601D;&#x8DEF;&#x3002;</p>
 <p>&#x4E8E;&#x662F;&#x60F3;&#x60F3;&#x81EA;&#x5DF1;&#x7684;RecyclerView&#x7CFB;&#x5217;&#x6B63;&#x597D;&#x8981;&#x8BB2;LayoutManager&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x6765;&#x505A;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x4E0A;&#x9762;&#x529F;&#x80FD;&#x7684;LayoutManager&#x597D;&#x4E86;&#x3002;&#x90A3;&#x4E48;&#x4E0B;&#x9762;&#x6211;&#x6765;&#x6559;&#x5927;&#x5BB6;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x628A;&#x4F60;&#x7684;RecyclerView&#x64B8;&#x6210;&#x9A6C;&#x8702;&#x7A9D;&#x3002;</p>
 <p>&#x6E90;&#x7801;&#x5730;&#x5740;&#xFF1A;<a href="https://github.com/Chacojack/HiveLayoutManager" target="_blank" rel="external">HiveLayoutManager</a></p>
+<a id="more"></a>
 <h2 id="1-&#x6210;&#x679C;&#x5C55;&#x793A;"><a href="#1-&#x6210;&#x679C;&#x5C55;&#x793A;" class="headerlink" title="1 &#x6210;&#x679C;&#x5C55;&#x793A;"></a>1 &#x6210;&#x679C;&#x5C55;&#x793A;</h2><p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5148;&#x770B;&#x4E00;&#x4E0B;&#x6211;&#x4EEC;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x76EE;&#x6807;&#xFF1A;</p>
 <p>&#x9759;&#x6001;&#x5C55;&#x793A;&#xFF1A;</p>
 <p>&#x6A2A;&#x5411;&#x7684;&#x6B63;&#x516D;&#x8FB9;&#x5F62;&#x5E03;&#x5C40;&#xFF1A;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2096079-ac95d713350d0d2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x5367;&#x4F3C;&#x4E00;&#x5F20;&#x5F13;"></p>
-<a id="more"></a>
+<!--more-->
 <p>&#x7EB5;&#x5411;&#x7684;&#x6B63;&#x516D;&#x8FB9;&#x5F62;&#x5E03;&#x5C40;&#xFF1A;</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2096079-66b8f9f68f369a92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x7AD9;&#x4F3C;&#x4E00;&#x68F5;&#x677E;"></p>
 <p>&#x63D2;&#x5165;&#xFF1A;</p>

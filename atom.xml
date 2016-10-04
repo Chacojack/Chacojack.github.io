@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chacojack.github.io/"/>
-  <updated>2016-10-04T03:15:41.000Z</updated>
+  <updated>2016-10-04T03:20:09.000Z</updated>
   <id>https://chacojack.github.io/</id>
   
   <author>
@@ -20,12 +20,13 @@
     <link href="https://chacojack.github.io/2016/10/02/%E5%8F%91%E5%B8%83%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%88%B0Maven%E4%BB%93%E5%BA%93/"/>
     <id>https://chacojack.github.io/2016/10/02/发布开源项目到Maven仓库/</id>
     <published>2016-10-02T03:00:44.000Z</published>
-    <updated>2016-10-04T03:15:41.000Z</updated>
+    <updated>2016-10-04T03:20:09.000Z</updated>
     
     <content type="html">&lt;p&gt;&amp;#x8FD9;&amp;#x4E2A;&amp;#x4E3B;&amp;#x8981;&amp;#x770B;&amp;#x5B98;&amp;#x65B9;&amp;#x6559;&amp;#x7A0B;&amp;#x3002;&lt;a href=&quot;http://central.sonatype.org/pages/ossrh-guide.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OSSRH Guide&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;1-&amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E10;&amp;#x53F7;&quot;&gt;&lt;a href=&quot;#1-&amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E10;&amp;#x53F7;&quot; class=&quot;headerlink&quot; title=&quot;1 &amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E10;&amp;#x53F7;&quot;&gt;&lt;/a&gt;1 &amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E10;&amp;#x53F7;&lt;/h2&gt;&lt;p&gt;Maven&amp;#x662F;&amp;#x7531;Sonatype&amp;#x7BA1;&amp;#x7406;&amp;#x7684;&amp;#x3002;&amp;#x90A3;&amp;#x4E48;&amp;#x9996;&amp;#x5148;&amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;Sonatype&amp;#x7684;&amp;#x5E10;&amp;#x53F7;&amp;#x3002;&lt;br&gt;&lt;a href=&quot;https://issues.sonatype.org/secure/Signup!default.jspa&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Create your JIRA account&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#x7136;&amp;#x540E;&amp;#x518D;&amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x7684;&amp;#x5DE5;&amp;#x7A0B;&amp;#x7684;Ticket&amp;#x3002;&lt;br&gt;&lt;a href=&quot;https://issues.sonatype.org/secure/CreateIssue.jspa?issuetype=21&amp;amp;pid=10134&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Create a New Project ticket&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#x586B;&amp;#x597D;&amp;#x4FE1;&amp;#x606F;&amp;#x5373;&amp;#x53EF;&amp;#x3002;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&amp;#x7136;&amp;#x540E;&amp;#x5C31;&amp;#x662F;&amp;#x7B49;&amp;#x548C;Sonatype&amp;#x7684;&amp;#x5DE5;&amp;#x4F5C;&amp;#x4EBA;&amp;#x5458;&amp;#x4EA4;&amp;#x6D41;&amp;#x3002;&amp;#x8FD9;&amp;#x4E2A;&amp;#x65F6;&amp;#x5019;&amp;#xFF0C;&amp;#x72B6;&amp;#x6001;&amp;#x4F1A;&amp;#x6709;&amp;#x5404;&amp;#x79CD;&amp;#x53D8;&amp;#x5316;&amp;#xFF0C;&amp;#x53EA;&amp;#x8981;&amp;#x4E0D;&amp;#x65AD;&amp;#x548C;Sonatype&amp;#x7684;&amp;#x5DE5;&amp;#x4F5C;&amp;#x4EBA;&amp;#x4EA4;&amp;#x6D41;&amp;#x5C31;&amp;#x53EF;&amp;#x4EE5;&amp;#x4E86;&amp;#xFF0C;&amp;#x76F4;&amp;#x5230;&amp;#x5230;&amp;#x4E86;&lt;code&gt;Resolved&lt;/code&gt;&amp;#x72B6;&amp;#x6001;&amp;#x3002;Sonatype&amp;#x7684;&amp;#x5DE5;&amp;#x4F5C;&amp;#x4EBA;&amp;#x5458;&amp;#x4F1A;&amp;#x7ED9;&amp;#x4F60;&amp;#x4E00;&amp;#x4E2A;&amp;#x8FD9;&amp;#x6837;&amp;#x7684;&lt;code&gt;Comment&lt;/code&gt;&amp;#xFF1A;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/2016/10/02/&amp;#x53D1;&amp;#x5E03;&amp;#x5F00;&amp;#x6E90;&amp;#x9879;&amp;#x76EE;&amp;#x5230;Maven&amp;#x4ED3;&amp;#x5E93;/3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#x8FD9;&amp;#x8BF4;&amp;#x660E;&amp;#x4F60;&amp;#x62FF;&amp;#x5230;&amp;#x4E86;&amp;#x5DE5;&amp;#x7A0B;&amp;#x7684;Ticket&amp;#x3002;&lt;/p&gt;
@@ -61,7 +62,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;&amp;#x8FD9;&amp;#x4E2A;&amp;#x4E3B;&amp;#x8981;&amp;#x770B;&amp;#x5B98;&amp;#x65B9;&amp;#x6559;&amp;#x7A0B;&amp;#x3002;&lt;a href=&quot;http://central.sonatype.org/pages/ossrh-guide.ht
+      &lt;p&gt;&amp;#x8FD9;&amp;#x4E2A;&amp;#x4E3B;&amp;#x8981;&amp;#x770B;&amp;#x5B98;&amp;#x65B9;&amp;#x6559;&amp;#x7A0B;&amp;#x3002;&lt;a href=&quot;http://central.sonatype.org/pages/ossrh-guide.html&quot;&gt;OSSRH Guide&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-&amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E10;&amp;#x53F7;&quot;&gt;&lt;a href=&quot;#1-&amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E10;&amp;#x53F7;&quot; class=&quot;headerlink&quot; title=&quot;1 &amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E10;&amp;#x53F7;&quot;&gt;&lt;/a&gt;1 &amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E10;&amp;#x53F7;&lt;/h2&gt;&lt;p&gt;Maven&amp;#x662F;&amp;#x7531;Sonatype&amp;#x7BA1;&amp;#x7406;&amp;#x7684;&amp;#x3002;&amp;#x90A3;&amp;#x4E48;&amp;#x9996;&amp;#x5148;&amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;Sonatype&amp;#x7684;&amp;#x5E10;&amp;#x53F7;&amp;#x3002;&lt;br&gt;&lt;a href=&quot;https://issues.sonatype.org/secure/Signup!default.jspa&quot;&gt;Create your JIRA account&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x7136;&amp;#x540E;&amp;#x518D;&amp;#x521B;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x65B0;&amp;#x7684;&amp;#x5DE5;&amp;#x7A0B;&amp;#x7684;Ticket&amp;#x3002;&lt;br&gt;&lt;a href=&quot;https://issues.sonatype.org/secure/CreateIssue.jspa?issuetype=21&amp;amp;pid=10134&quot;&gt;Create a New Project ticket&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x586B;&amp;#x597D;&amp;#x4FE1;&amp;#x606F;&amp;#x5373;&amp;#x53EF;&amp;#x3002;&lt;/p&gt;
     
     </summary>
     
@@ -338,18 +342,19 @@
     <link href="https://chacojack.github.io/2016/09/14/%E6%8A%8ARecyclerView%E5%81%9A%E6%88%90-%E9%A9%AC-%E8%9C%82-%E7%AA%9D/"/>
     <id>https://chacojack.github.io/2016/09/14/把RecyclerView做成-马-蜂-窝/</id>
     <published>2016-09-14T11:29:32.000Z</published>
-    <updated>2016-09-15T10:41:48.000Z</updated>
+    <updated>2016-10-04T03:19:36.000Z</updated>
     
     <content type="html">&lt;p&gt;&amp;#x524D;&amp;#x51E0;&amp;#x5929;&amp;#x6211;&amp;#x770B;&amp;#x5230;&amp;#x4E00;&amp;#x7BC7;&amp;#x6587;&amp;#x7AE0;&amp;#x5F88;&amp;#x6709;&amp;#x8DA3;&amp;#xFF1A;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/768177f2b274&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Android&amp;#x81EA;&amp;#x5B9A;&amp;#x4E49;&amp;#x8702;&amp;#x7A9D;&amp;#x56FE;&amp;#x5B9E;&amp;#x73B0;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#x4E8E;&amp;#x662F;&amp;#x6211;&amp;#x5C06;&amp;#x6587;&amp;#x7AE0;&amp;#x4E2D;&amp;#x6E90;&amp;#x7801;&amp;#x4E0B;&amp;#x8F7D;&amp;#x4E0B;&amp;#x6765;&amp;#x770B;&amp;#x4E86;&amp;#x4E00;&amp;#x4E0B;&amp;#xFF0C;&amp;#x53D1;&amp;#x73B0;&amp;#x53EA;&amp;#x652F;&amp;#x6301;7&amp;#x5F20;&amp;#x56FE;&amp;#xFF0C;&amp;#x4E0D;&amp;#x80FD;&amp;#x591A;&amp;#x4E0D;&amp;#x80FD;&amp;#x5C11;&amp;#x3002;&amp;#x800C;&amp;#x4E14;&amp;#x5728;&amp;#x8BBE;&amp;#x8BA1;&amp;#x4E0A;&amp;#x4E5F;&amp;#x6709;&amp;#x4E00;&amp;#x5B9A;&amp;#x7684;&amp;#x6B20;&amp;#x7F3A;&amp;#x3002;&amp;#x4E0D;&amp;#x8FC7;&amp;#x4E5F;&amp;#x7ED9;&amp;#x6211;&amp;#x63D0;&amp;#x62F1;&amp;#x4E86;&amp;#x4E00;&amp;#x79CD;&amp;#x601D;&amp;#x8DEF;&amp;#x3002;&lt;/p&gt;
 &lt;p&gt;&amp;#x4E8E;&amp;#x662F;&amp;#x60F3;&amp;#x60F3;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684;RecyclerView&amp;#x7CFB;&amp;#x5217;&amp;#x6B63;&amp;#x597D;&amp;#x8981;&amp;#x8BB2;LayoutManager&amp;#x4E86;&amp;#xFF0C;&amp;#x90A3;&amp;#x4E48;&amp;#x6211;&amp;#x6765;&amp;#x505A;&amp;#x4E00;&amp;#x4E2A;&amp;#x7C7B;&amp;#x4F3C;&amp;#x4E0A;&amp;#x9762;&amp;#x529F;&amp;#x80FD;&amp;#x7684;LayoutManager&amp;#x597D;&amp;#x4E86;&amp;#x3002;&amp;#x90A3;&amp;#x4E48;&amp;#x4E0B;&amp;#x9762;&amp;#x6211;&amp;#x6765;&amp;#x6559;&amp;#x5927;&amp;#x5BB6;&amp;#x4E00;&amp;#x6B65;&amp;#x4E00;&amp;#x6B65;&amp;#x628A;&amp;#x4F60;&amp;#x7684;RecyclerView&amp;#x64B8;&amp;#x6210;&amp;#x9A6C;&amp;#x8702;&amp;#x7A9D;&amp;#x3002;&lt;/p&gt;
 &lt;p&gt;&amp;#x6E90;&amp;#x7801;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;&lt;a href=&quot;https://github.com/Chacojack/HiveLayoutManager&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HiveLayoutManager&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;1-&amp;#x6210;&amp;#x679C;&amp;#x5C55;&amp;#x793A;&quot;&gt;&lt;a href=&quot;#1-&amp;#x6210;&amp;#x679C;&amp;#x5C55;&amp;#x793A;&quot; class=&quot;headerlink&quot; title=&quot;1 &amp;#x6210;&amp;#x679C;&amp;#x5C55;&amp;#x793A;&quot;&gt;&lt;/a&gt;1 &amp;#x6210;&amp;#x679C;&amp;#x5C55;&amp;#x793A;&lt;/h2&gt;&lt;p&gt;&amp;#x9996;&amp;#x5148;&amp;#x6211;&amp;#x4EEC;&amp;#x5148;&amp;#x770B;&amp;#x4E00;&amp;#x4E0B;&amp;#x6211;&amp;#x4EEC;&amp;#x8981;&amp;#x5B9E;&amp;#x73B0;&amp;#x7684;&amp;#x76EE;&amp;#x6807;&amp;#xFF1A;&lt;/p&gt;
 &lt;p&gt;&amp;#x9759;&amp;#x6001;&amp;#x5C55;&amp;#x793A;&amp;#xFF1A;&lt;/p&gt;
 &lt;p&gt;&amp;#x6A2A;&amp;#x5411;&amp;#x7684;&amp;#x6B63;&amp;#x516D;&amp;#x8FB9;&amp;#x5F62;&amp;#x5E03;&amp;#x5C40;&amp;#xFF1A;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2096079-ac95d713350d0d2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&amp;#x5367;&amp;#x4F3C;&amp;#x4E00;&amp;#x5F20;&amp;#x5F13;&quot;&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!--more--&gt;
 &lt;p&gt;&amp;#x7EB5;&amp;#x5411;&amp;#x7684;&amp;#x6B63;&amp;#x516D;&amp;#x8FB9;&amp;#x5F62;&amp;#x5E03;&amp;#x5C40;&amp;#xFF1A;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2096079-66b8f9f68f369a92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&amp;#x7AD9;&amp;#x4F3C;&amp;#x4E00;&amp;#x68F5;&amp;#x677E;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#x63D2;&amp;#x5165;&amp;#xFF1A;&lt;/p&gt;
@@ -560,10 +565,6 @@
 &lt;p&gt;&amp;#x4E8E;&amp;#x662F;&amp;#x6211;&amp;#x5C06;&amp;#x6587;&amp;#x7AE0;&amp;#x4E2D;&amp;#x6E90;&amp;#x7801;&amp;#x4E0B;&amp;#x8F7D;&amp;#x4E0B;&amp;#x6765;&amp;#x770B;&amp;#x4E86;&amp;#x4E00;&amp;#x4E0B;&amp;#xFF0C;&amp;#x53D1;&amp;#x73B0;&amp;#x53EA;&amp;#x652F;&amp;#x6301;7&amp;#x5F20;&amp;#x56FE;&amp;#xFF0C;&amp;#x4E0D;&amp;#x80FD;&amp;#x591A;&amp;#x4E0D;&amp;#x80FD;&amp;#x5C11;&amp;#x3002;&amp;#x800C;&amp;#x4E14;&amp;#x5728;&amp;#x8BBE;&amp;#x8BA1;&amp;#x4E0A;&amp;#x4E5F;&amp;#x6709;&amp;#x4E00;&amp;#x5B9A;&amp;#x7684;&amp;#x6B20;&amp;#x7F3A;&amp;#x3002;&amp;#x4E0D;&amp;#x8FC7;&amp;#x4E5F;&amp;#x7ED9;&amp;#x6211;&amp;#x63D0;&amp;#x62F1;&amp;#x4E86;&amp;#x4E00;&amp;#x79CD;&amp;#x601D;&amp;#x8DEF;&amp;#x3002;&lt;/p&gt;
 &lt;p&gt;&amp;#x4E8E;&amp;#x662F;&amp;#x60F3;&amp;#x60F3;&amp;#x81EA;&amp;#x5DF1;&amp;#x7684;RecyclerView&amp;#x7CFB;&amp;#x5217;&amp;#x6B63;&amp;#x597D;&amp;#x8981;&amp;#x8BB2;LayoutManager&amp;#x4E86;&amp;#xFF0C;&amp;#x90A3;&amp;#x4E48;&amp;#x6211;&amp;#x6765;&amp;#x505A;&amp;#x4E00;&amp;#x4E2A;&amp;#x7C7B;&amp;#x4F3C;&amp;#x4E0A;&amp;#x9762;&amp;#x529F;&amp;#x80FD;&amp;#x7684;LayoutManager&amp;#x597D;&amp;#x4E86;&amp;#x3002;&amp;#x90A3;&amp;#x4E48;&amp;#x4E0B;&amp;#x9762;&amp;#x6211;&amp;#x6765;&amp;#x6559;&amp;#x5927;&amp;#x5BB6;&amp;#x4E00;&amp;#x6B65;&amp;#x4E00;&amp;#x6B65;&amp;#x628A;&amp;#x4F60;&amp;#x7684;RecyclerView&amp;#x64B8;&amp;#x6210;&amp;#x9A6C;&amp;#x8702;&amp;#x7A9D;&amp;#x3002;&lt;/p&gt;
 &lt;p&gt;&amp;#x6E90;&amp;#x7801;&amp;#x5730;&amp;#x5740;&amp;#xFF1A;&lt;a href=&quot;https://github.com/Chacojack/HiveLayoutManager&quot;&gt;HiveLayoutManager&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;1-&amp;#x6210;&amp;#x679C;&amp;#x5C55;&amp;#x793A;&quot;&gt;&lt;a href=&quot;#1-&amp;#x6210;&amp;#x679C;&amp;#x5C55;&amp;#x793A;&quot; class=&quot;headerlink&quot; title=&quot;1 &amp;#x6210;&amp;#x679C;&amp;#x5C55;&amp;#x793A;&quot;&gt;&lt;/a&gt;1 &amp;#x6210;&amp;#x679C;&amp;#x5C55;&amp;#x793A;&lt;/h2&gt;&lt;p&gt;&amp;#x9996;&amp;#x5148;&amp;#x6211;&amp;#x4EEC;&amp;#x5148;&amp;#x770B;&amp;#x4E00;&amp;#x4E0B;&amp;#x6211;&amp;#x4EEC;&amp;#x8981;&amp;#x5B9E;&amp;#x73B0;&amp;#x7684;&amp;#x76EE;&amp;#x6807;&amp;#xFF1A;&lt;/p&gt;
-&lt;p&gt;&amp;#x9759;&amp;#x6001;&amp;#x5C55;&amp;#x793A;&amp;#xFF1A;&lt;/p&gt;
-&lt;p&gt;&amp;#x6A2A;&amp;#x5411;&amp;#x7684;&amp;#x6B63;&amp;#x516D;&amp;#x8FB9;&amp;#x5F62;&amp;#x5E03;&amp;#x5C40;&amp;#xFF1A;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/2096079-ac95d713350d0d2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&amp;#x5367;&amp;#x4F3C;&amp;#x4E00;&amp;#x5F20;&amp;#x5F13;&quot;&gt;&lt;/p&gt;
     
     </summary>
     
