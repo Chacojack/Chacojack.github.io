@@ -1,0 +1,986 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="后台,RabbitMQ," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="RabbitMQ Mac &amp;#x5B89;&amp;#x88C5;1 Homebrew &amp;#x5B89;&amp;#x88C5;homebrew&amp;#x7684;&amp;#x5B89;&amp;#x88C5;&amp;#x65B9;&amp;#x6CD5;&amp;#x67E5;&amp;#x770B;&amp;#x7F51;&amp;#x7AD9;&amp;#xFF1A;Homebrew&amp;#x5B98;&amp;#x7F51;
+1.1 &amp;#x5B89;&amp;#x88C5; Server&amp;#x5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RabbitMQ Mac 安装">
+<meta property="og:url" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/index.html">
+<meta property="og:site_name" content="ZejianChai's Note">
+<meta property="og:description" content="RabbitMQ Mac &amp;#x5B89;&amp;#x88C5;1 Homebrew &amp;#x5B89;&amp;#x88C5;homebrew&amp;#x7684;&amp;#x5B89;&amp;#x88C5;&amp;#x65B9;&amp;#x6CD5;&amp;#x67E5;&amp;#x770B;&amp;#x7F51;&amp;#x7AD9;&amp;#xFF1A;Homebrew&amp;#x5B98;&amp;#x7F51;
+1.1 &amp;#x5B89;&amp;#x88C5; Server&amp;#x5">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/homebrew安装.png">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/查看安装好的目录.png">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/添加到系统路径中.png">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/运行RabbitMQ.png">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/开启RabbitMQ管理平台.png">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/登录RabbitMQ管理平台.png">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/RabbitMQ管理平台界面.png">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/添加用户.png">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/从管理平台中查看用户.png">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/设置用户权限.png">
+<meta property="og:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/设置权限用户界面展示.png">
+<meta property="og:updated_time" content="2017-12-18T12:30:18.369Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RabbitMQ Mac 安装">
+<meta name="twitter:description" content="RabbitMQ Mac &amp;#x5B89;&amp;#x88C5;1 Homebrew &amp;#x5B89;&amp;#x88C5;homebrew&amp;#x7684;&amp;#x5B89;&amp;#x88C5;&amp;#x65B9;&amp;#x6CD5;&amp;#x67E5;&amp;#x770B;&amp;#x7F51;&amp;#x7AD9;&amp;#xFF1A;Homebrew&amp;#x5B98;&amp;#x7F51;
+1.1 &amp;#x5B89;&amp;#x88C5; Server&amp;#x5">
+<meta name="twitter:image" content="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/homebrew安装.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/"/>
+
+  <title> RabbitMQ Mac 安装 | ZejianChai's Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">ZejianChai's Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Android开发者</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                RabbitMQ Mac 安装
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-12-18T19:57:17+08:00" content="2017-12-18">
+              2017-12-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/后台/" itemprop="url" rel="index">
+                    <span itemprop="name">后台</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/12/18/RabbitMQ-Mac-安装/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/12/18/RabbitMQ-Mac-安装/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/12/18/RabbitMQ-Mac-安装/" class="leancloud_visitors" data-flag-title="RabbitMQ Mac 安装">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="RabbitMQ-Mac-&#x5B89;&#x88C5;"><a href="#RabbitMQ-Mac-&#x5B89;&#x88C5;" class="headerlink" title="RabbitMQ Mac &#x5B89;&#x88C5;"></a>RabbitMQ Mac &#x5B89;&#x88C5;</h1><h2 id="1-Homebrew-&#x5B89;&#x88C5;"><a href="#1-Homebrew-&#x5B89;&#x88C5;" class="headerlink" title="1 Homebrew &#x5B89;&#x88C5;"></a>1 Homebrew &#x5B89;&#x88C5;</h2><p>homebrew&#x7684;&#x5B89;&#x88C5;&#x65B9;&#x6CD5;&#x67E5;&#x770B;&#x7F51;&#x7AD9;&#xFF1A;<a href="https://brew.sh/" target="_blank" rel="external">Homebrew&#x5B98;&#x7F51;</a></p>
+<h3 id="1-1-&#x5B89;&#x88C5;-Server"><a href="#1-1-&#x5B89;&#x88C5;-Server" class="headerlink" title="1.1 &#x5B89;&#x88C5; Server"></a>1.1 &#x5B89;&#x88C5; Server</h3><p>&#x5B89;&#x88C5;&#x5B8C;Homebrew&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x7EC8;&#x7AEF;&#x6267;&#x884C;<code>sudo brew install rabbitmq</code>&#xFF1A;</p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/homebrew&#x5B89;&#x88C5;.png" alt="&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x56FE;&#x7247;"></p>
+<a id="more"></a>
+<h3 id="1-2-&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;"><a href="#1-2-&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;" class="headerlink" title="1.2 &#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;"></a>1.2 &#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x4E4B;&#x540E;</h3><p>Homebrew&#x5B89;&#x88C5;&#x7684;RabbitMQ&#x5728;<code>/usr/local/sbin</code>&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5230;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x770B;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/&#x67E5;&#x770B;&#x5B89;&#x88C5;&#x597D;&#x7684;&#x76EE;&#x5F55;.png" alt="&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x6587;&#x4EF6;&#x5939;&#x5C55;&#x793A;"></p>
+<h3 id="1-3-&#x6DFB;&#x52A0;&#x8DEF;&#x5F84;"><a href="#1-3-&#x6DFB;&#x52A0;&#x8DEF;&#x5F84;" class="headerlink" title="1.3 &#x6DFB;&#x52A0;&#x8DEF;&#x5F84;"></a>1.3 &#x6DFB;&#x52A0;&#x8DEF;&#x5F84;</h3><p>&#x4E3A;&#x4E86;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;<code>rabbitmq-server</code>&#x547D;&#x4EE4;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;<code>/usr/local/sbin</code>&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;&#x7CFB;&#x7EDF;&#x8DEF;&#x5F84;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x4F7F;&#x7528;<code>zsh</code>&#x7684;&#x8BDD;&#xFF0C;&#x9700;&#x8981;&#x5728;<code>.bash_profile</code>&#x6216;&#x8005;<code>.profile</code>&#x4E2D;&#x6DFB;&#x52A0;<code>PATH=$PATH:/usr/local/sbin</code>&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x548C;&#x6211;&#x4E00;&#x6837;&#x4F7F;&#x7528;&#x7684;&#x662F;<code>zsh</code>&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x5728;<code>.zshrc</code>&#x4E2D;&#x6DFB;&#x52A0;<code>PATH=$PATH:/usr/local/sbin</code>&#xFF1A;</p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/&#x6DFB;&#x52A0;&#x5230;&#x7CFB;&#x7EDF;&#x8DEF;&#x5F84;&#x4E2D;.png" alt="&#x6DFB;&#x52A0;&#x7CFB;&#x7EDF;&#x8DEF;&#x5F84;"></p>
+<p>&#x7136;&#x540E;&#x6267;&#x884C;<code>source .bash_profile</code>&#x6216;<code>source .zshrc</code>&#x547D;&#x4EE4;&#x8BA9;&#x5176;&#x751F;&#x6548;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>rabbitmq-server</code>&#x547D;&#x4EE4;&#x4E86;&#x3002;</p>
+<h3 id="1-4-&#x8FD0;&#x884C;RabbitMQ"><a href="#1-4-&#x8FD0;&#x884C;RabbitMQ" class="headerlink" title="1.4 &#x8FD0;&#x884C;RabbitMQ"></a>1.4 &#x8FD0;&#x884C;RabbitMQ</h3><p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x4EE4;<code>rabbitmq-server</code>&#x8FD0;&#x884C;RabbitMQ&#x3002;</p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/&#x8FD0;&#x884C;RabbitMQ.png" alt="&#x8FD0;&#x884C;RabbitMQ"></p>
+<p>&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x5C06;RabbitMQ&#x8FD0;&#x884C;&#x8D77;&#x6765;&#x4E86;&#x3002;</p>
+<h2 id="2-RabbitMQ&#x7684;&#x7BA1;&#x7406;&#x76D1;&#x63A7;&#x5E73;&#x53F0;"><a href="#2-RabbitMQ&#x7684;&#x7BA1;&#x7406;&#x76D1;&#x63A7;&#x5E73;&#x53F0;" class="headerlink" title="2 RabbitMQ&#x7684;&#x7BA1;&#x7406;&#x76D1;&#x63A7;&#x5E73;&#x53F0;"></a>2 RabbitMQ&#x7684;&#x7BA1;&#x7406;&#x76D1;&#x63A7;&#x5E73;&#x53F0;</h2><p>RabbitMQ&#x6709;&#x81EA;&#x5E26;&#x7684;&#x7BA1;&#x7406;&#x76D1;&#x63A7;&#x5E73;&#x53F0;&#x3002;</p>
+<h3 id="2-1-&#x5F00;&#x542F;&#x65B9;&#x6CD5;"><a href="#2-1-&#x5F00;&#x542F;&#x65B9;&#x6CD5;" class="headerlink" title="2.1 &#x5F00;&#x542F;&#x65B9;&#x6CD5;"></a>2.1 &#x5F00;&#x542F;&#x65B9;&#x6CD5;</h3><p>&#x53E6;&#x5F00;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;&#x6216;&#x8005;&#x6807;&#x7B7E;&#xFF0C;&#x6267;&#x884C;<code>rabbitmq-plugins enable rabbitmq_management</code></p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/&#x5F00;&#x542F;RabbitMQ&#x7BA1;&#x7406;&#x5E73;&#x53F0;.png" alt="&#x5F00;&#x542F;RabbitMQ&#x7BA1;&#x7406;&#x5E73;&#x53F0;"></p>
+<h3 id="2-2-&#x767B;&#x5F55;&#x7BA1;&#x7406;&#x5E73;&#x53F0;"><a href="#2-2-&#x767B;&#x5F55;&#x7BA1;&#x7406;&#x5E73;&#x53F0;" class="headerlink" title="2.2 &#x767B;&#x5F55;&#x7BA1;&#x7406;&#x5E73;&#x53F0;"></a>2.2 &#x767B;&#x5F55;&#x7BA1;&#x7406;&#x5E73;&#x53F0;</h3><p>&#x6D4F;&#x89C8;&#x5668;&#x6253;&#x5F00;<code>http://localhost:15672/</code>&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x53BB;RabbitMQ&#x7684;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x754C;&#x9762;&#x4E86;&#x3002;</p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/&#x767B;&#x5F55;RabbitMQ&#x7BA1;&#x7406;&#x5E73;&#x53F0;.png" alt="&#x767B;&#x5F55;RabbitMQ&#x7BA1;&#x7406;&#x5E73;&#x53F0;"></p>
+<p>&#x9ED8;&#x8BA4;&#x7684;&#x8D26;&#x53F7;&#x662F;<code>guest</code>&#xFF0C;&#x5BC6;&#x7801;&#x4E5F;&#x662F;<code>guest</code>&#x3002;&#x7136;&#x540E;&#x767B;&#x5F55;&#x3002;&#x7136;&#x540E;&#x770B;&#x5230;&#x754C;&#x9762;&#xFF1A;</p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/RabbitMQ&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x754C;&#x9762;.png" alt="RabbitMQ&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x754C;&#x9762;"></p>
+<h2 id="3-&#x8BBE;&#x7F6E;&#x8D26;&#x6237;"><a href="#3-&#x8BBE;&#x7F6E;&#x8D26;&#x6237;" class="headerlink" title="3 &#x8BBE;&#x7F6E;&#x8D26;&#x6237;"></a>3 &#x8BBE;&#x7F6E;&#x8D26;&#x6237;</h2><p>&#x56E0;&#x4E3A;&#x7CFB;&#x7EDF;&#x9ED8;&#x8BA4;&#x7684;<code>guest</code>&#x8D26;&#x6237;&#x53EA;&#x80FD;&#x662F;&#x672C;&#x673A;&#x8BBF;&#x95EE;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x5176;&#x4ED6;&#x7684;&#x8D26;&#x6237;&#xFF0C;&#x5141;&#x8BB8;&#x5916;&#x90E8;&#x7684;&#x673A;&#x5668;&#x8BBF;&#x95EE;&#x6211;&#x4EEC;&#x7684;&#x673A;&#x5668;&#x4E0A;&#x7684;RabbitMQ&#x3002;<strong>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x53EA;&#x662F;&#x7528;&#x672C;&#x673A;&#x5B66;&#x4E60;&#xFF0C;&#x8FD9;&#x4E00;&#x6B65;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6682;&#x65F6;&#x4E0D;&#x505A;</strong>&#x3002;</p>
+<h3 id="3-1-&#x6DFB;&#x52A0;&#x7528;&#x6237;"><a href="#3-1-&#x6DFB;&#x52A0;&#x7528;&#x6237;" class="headerlink" title="3.1 &#x6DFB;&#x52A0;&#x7528;&#x6237;"></a>3.1 &#x6DFB;&#x52A0;&#x7528;&#x6237;</h3><p>&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x8D26;&#x6237;<code>jack</code>&#xFF0C;&#x5BC6;&#x7801;<code>123456</code>&#x7684;&#x8BDD;&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;<code>sudo rabbitmqctl add_user jack 123456</code>&#x547D;&#x4EE4;&#x3002;</p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/&#x6DFB;&#x52A0;&#x7528;&#x6237;.png" alt="&#x6DFB;&#x52A0;&#x7528;&#x6237;"></p>
+<p>&#x7136;&#x540E;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x4E2D;&#x770B;&#x4E00;&#x4E0B;&#x6548;&#x679C;&#xFF1A;</p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/&#x4ECE;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x4E2D;&#x67E5;&#x770B;&#x7528;&#x6237;.png" alt="&#x4ECE;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x4E2D;&#x67E5;&#x770B;&#x7528;&#x6237;"></p>
+<p>&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#x4E2D;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x7684;hosts&#x662F;&#x6CA1;&#x6709;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x8FD8;&#x8981;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x7528;&#x6237;&#x8BBE;&#x7F6E;&#x6743;&#x9650;&#x3002;</p>
+<h3 id="3-2-&#x8BBE;&#x7F6E;&#x6743;&#x9650;"><a href="#3-2-&#x8BBE;&#x7F6E;&#x6743;&#x9650;" class="headerlink" title="3.2 &#x8BBE;&#x7F6E;&#x6743;&#x9650;"></a>3.2 &#x8BBE;&#x7F6E;&#x6743;&#x9650;</h3><p>&#x8BBE;&#x7F6E;&#x6743;&#x9650;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x547D;&#x4EE4;&#x662F;&#xFF1A;</p>
+<p><code>sudo rabbitmqctl set_permissions -p / jack &quot;.*&quot; &quot;.*&quot; &quot;.*&quot;</code></p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x6743;&#x9650;.png" alt=""></p>
+<p>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x518D;&#x767B;&#x5F55;RabbitMQ&#x7684;&#x7BA1;&#x7406;&#x5E73;&#x53F0;&#xFF1A;</p>
+<p><img src="/2017/12/18/RabbitMQ-Mac-&#x5B89;&#x88C5;/&#x8BBE;&#x7F6E;&#x6743;&#x9650;&#x7528;&#x6237;&#x754C;&#x9762;&#x5C55;&#x793A;.png" alt=""></p>
+<p>&#x90A3;&#x4E48;&#x6211;&#x4EEC;RabbitMQ&#x7684;&#x5B89;&#x88C5;&#x6B65;&#x9AA4;&#x5230;&#x6B64;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x4E4B;&#x540E;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;jack&#x8FD9;&#x4E2A;&#x7528;&#x6237;&#x6765;&#x5B66;&#x4E60;&#x5982;&#x4F55;&#x64CD;&#x4F5C;RabbitMQ&#x4E86;&#x3002;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/后台/" rel="tag">#后台</a>
+          
+            <a href="/tags/RabbitMQ/" rel="tag">#RabbitMQ</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/15/NDK开发学习笔记（1）/" rel="next" title="NDK开发学习笔记（1）">
+                <i class="fa fa-chevron-left"></i> NDK开发学习笔记（1）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/12/18/RabbitMQ-Mac-安装/"
+           data-title="RabbitMQ Mac 安装" data-url="https://chacojack.github.io/2017/12/18/RabbitMQ-Mac-安装/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="柴泽建" />
+          <p class="site-author-name" itemprop="name">柴泽建</p>
+          <p class="site-description motion-element" itemprop="description">对代码永不满足</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Chacojack" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2703310877" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.jianshu.com/users/dd5f6394457d/latest_articles" target="_blank" title="Jianshu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Jianshu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RabbitMQ-Mac-安装"><span class="nav-number">1.</span> <span class="nav-text">RabbitMQ Mac 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Homebrew-安装"><span class="nav-number">1.1.</span> <span class="nav-text">1 Homebrew 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-安装-Server"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 安装 Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-安装完成之后"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 安装完成之后</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-添加路径"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 添加路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-运行RabbitMQ"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 运行RabbitMQ</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-RabbitMQ的管理监控平台"><span class="nav-number">1.2.</span> <span class="nav-text">2 RabbitMQ的管理监控平台</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-开启方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 开启方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-登录管理平台"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 登录管理平台</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-设置账户"><span class="nav-number">1.3.</span> <span class="nav-text">3 设置账户</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-添加用户"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 添加用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-设置权限"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 设置权限</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">柴泽建</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"jack-chai-notes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Lsvcc0AtrLqT6Pw3Cr7f8phj-gzGzoHsz", "HvTbRI5ugVcWRpBIMaPXB6XX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
