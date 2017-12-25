@@ -84,12 +84,13 @@
 
 
 
-<meta name="description" content="&amp;#x4F7F;&amp;#x7528;jvisualvm&amp;#x76D1;&amp;#x63A7;Java&amp;#x7A0B;&amp;#x5E8F;&amp;#xFF08;&amp;#x672C;&amp;#x5730;&amp;#x548C;&amp;#x8FDC;&amp;#x7A0B;&amp;#xFF09;0 &amp;#x8D77;&amp;#x56E0;&amp;#x4E0D;&amp;#x611F;&amp;#x5174;&amp;#x8DA3;&amp;#x7684;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;">
+<meta name="description" content="&amp;#x4F7F;&amp;#x7528;jvisualvm&amp;#x76D1;&amp;#x63A7;Java&amp;#x7A0B;&amp;#x5E8F;&amp;#xFF08;&amp;#x672C;&amp;#x5730;&amp;#x548C;&amp;#x8FDC;&amp;#x7A0B;&amp;#xFF09;0 &amp;#x8D77;&amp;#x56E0;&amp;#x4E0D;&amp;#x611F;&amp;#x5174;&amp;#x8DA3;&amp;#x7684;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用jvisualvm监控Java程序（本地和远程）">
 <meta property="og:url" content="https://chacojack.github.io/2017/12/18/使用jvisualvm监控Java程序（本地和远程）/index.html">
 <meta property="og:site_name" content="ZejianChai's Note">
-<meta property="og:description" content="&amp;#x4F7F;&amp;#x7528;jvisualvm&amp;#x76D1;&amp;#x63A7;Java&amp;#x7A0B;&amp;#x5E8F;&amp;#xFF08;&amp;#x672C;&amp;#x5730;&amp;#x548C;&amp;#x8FDC;&amp;#x7A0B;&amp;#xFF09;0 &amp;#x8D77;&amp;#x56E0;&amp;#x4E0D;&amp;#x611F;&amp;#x5174;&amp;#x8DA3;&amp;#x7684;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;">
+<meta property="og:description" content="&amp;#x4F7F;&amp;#x7528;jvisualvm&amp;#x76D1;&amp;#x63A7;Java&amp;#x7A0B;&amp;#x5E8F;&amp;#xFF08;&amp;#x672C;&amp;#x5730;&amp;#x548C;&amp;#x8FDC;&amp;#x7A0B;&amp;#xFF09;0 &amp;#x8D77;&amp;#x56E0;&amp;#x4E0D;&amp;#x611F;&amp;#x5174;&amp;#x8DA3;&amp;#x7684;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;">
+<meta property="og:image" content="https://badge.juejin.im/entry/5a3b94a951882506a463cab2/likes.svg?style=flat-square">
 <meta property="og:image" content="https://chacojack.github.io/2017/12/18/使用jvisualvm监控Java程序（本地和远程）/top查看进程运行状态.png">
 <meta property="og:image" content="https://chacojack.github.io/2017/12/18/使用jvisualvm监控Java程序（本地和远程）/运行Java程序的运行脚本.png">
 <meta property="og:image" content="https://chacojack.github.io/2017/12/18/使用jvisualvm监控Java程序（本地和远程）/jVisualVM界面.png">
@@ -99,11 +100,11 @@
 <meta property="og:image" content="https://chacojack.github.io/2017/12/18/使用jvisualvm监控Java程序（本地和远程）/设置插件.png">
 <meta property="og:image" content="https://chacojack.github.io/2017/12/18/使用jvisualvm监控Java程序（本地和远程）/配置远程主机.png">
 <meta property="og:image" content="https://chacojack.github.io/2017/12/18/使用jvisualvm监控Java程序（本地和远程）/填写链接信息.png">
-<meta property="og:updated_time" content="2017-12-19T13:16:36.439Z">
+<meta property="og:updated_time" content="2017-12-21T11:03:12.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用jvisualvm监控Java程序（本地和远程）">
-<meta name="twitter:description" content="&amp;#x4F7F;&amp;#x7528;jvisualvm&amp;#x76D1;&amp;#x63A7;Java&amp;#x7A0B;&amp;#x5E8F;&amp;#xFF08;&amp;#x672C;&amp;#x5730;&amp;#x548C;&amp;#x8FDC;&amp;#x7A0B;&amp;#xFF09;0 &amp;#x8D77;&amp;#x56E0;&amp;#x4E0D;&amp;#x611F;&amp;#x5174;&amp;#x8DA3;&amp;#x7684;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;&amp;">
-<meta name="twitter:image" content="https://chacojack.github.io/2017/12/18/使用jvisualvm监控Java程序（本地和远程）/top查看进程运行状态.png">
+<meta name="twitter:description" content="&amp;#x4F7F;&amp;#x7528;jvisualvm&amp;#x76D1;&amp;#x63A7;Java&amp;#x7A0B;&amp;#x5E8F;&amp;#xFF08;&amp;#x672C;&amp;#x5730;&amp;#x548C;&amp;#x8FDC;&amp;#x7A0B;&amp;#xFF09;0 &amp;#x8D77;&amp;#x56E0;&amp;#x4E0D;&amp;#x611F;&amp;#x5174;&amp;#x8DA3;&amp;#x7684;&amp;#x53EF;&amp;#x4EE5;&amp;#x76F4;">
+<meta name="twitter:image" content="https://badge.juejin.im/entry/5a3b94a951882506a463cab2/likes.svg?style=flat-square">
 
 
 
@@ -354,7 +355,8 @@
       
 
       
-        <h1 id="&#x4F7F;&#x7528;jvisualvm&#x76D1;&#x63A7;Java&#x7A0B;&#x5E8F;&#xFF08;&#x672C;&#x5730;&#x548C;&#x8FDC;&#x7A0B;&#xFF09;"><a href="#&#x4F7F;&#x7528;jvisualvm&#x76D1;&#x63A7;Java&#x7A0B;&#x5E8F;&#xFF08;&#x672C;&#x5730;&#x548C;&#x8FDC;&#x7A0B;&#xFF09;" class="headerlink" title="&#x4F7F;&#x7528;jvisualvm&#x76D1;&#x63A7;Java&#x7A0B;&#x5E8F;&#xFF08;&#x672C;&#x5730;&#x548C;&#x8FDC;&#x7A0B;&#xFF09;"></a>&#x4F7F;&#x7528;jvisualvm&#x76D1;&#x63A7;Java&#x7A0B;&#x5E8F;&#xFF08;&#x672C;&#x5730;&#x548C;&#x8FDC;&#x7A0B;&#xFF09;</h1><h2 id="0-&#x8D77;&#x56E0;"><a href="#0-&#x8D77;&#x56E0;" class="headerlink" title="0 &#x8D77;&#x56E0;"></a>0 &#x8D77;&#x56E0;</h2><p><strong>&#x4E0D;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4ECE; <a href="#1-&#x672C;&#x5730;Java&#x7A0B;&#x5E8F;&#x76D1;&#x63A7;">1 &#x672C;&#x5730;Java&#x7A0B;&#x5E8F;&#x76D1;&#x63A7;</a> &#x5F00;&#x59CB;&#x770B;</strong></p>
+        <p><a href="https://juejin.im/post/5a3b92def265da4319567218" target="_blank" rel="external"><img src="https://badge.juejin.im/entry/5a3b94a951882506a463cab2/likes.svg?style=flat-square" alt=""></a></p>
+<h1 id="&#x4F7F;&#x7528;jvisualvm&#x76D1;&#x63A7;Java&#x7A0B;&#x5E8F;&#xFF08;&#x672C;&#x5730;&#x548C;&#x8FDC;&#x7A0B;&#xFF09;"><a href="#&#x4F7F;&#x7528;jvisualvm&#x76D1;&#x63A7;Java&#x7A0B;&#x5E8F;&#xFF08;&#x672C;&#x5730;&#x548C;&#x8FDC;&#x7A0B;&#xFF09;" class="headerlink" title="&#x4F7F;&#x7528;jvisualvm&#x76D1;&#x63A7;Java&#x7A0B;&#x5E8F;&#xFF08;&#x672C;&#x5730;&#x548C;&#x8FDC;&#x7A0B;&#xFF09;"></a>&#x4F7F;&#x7528;jvisualvm&#x76D1;&#x63A7;Java&#x7A0B;&#x5E8F;&#xFF08;&#x672C;&#x5730;&#x548C;&#x8FDC;&#x7A0B;&#xFF09;</h1><h2 id="0-&#x8D77;&#x56E0;"><a href="#0-&#x8D77;&#x56E0;" class="headerlink" title="0 &#x8D77;&#x56E0;"></a>0 &#x8D77;&#x56E0;</h2><p><strong>&#x4E0D;&#x611F;&#x5174;&#x8DA3;&#x7684;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4ECE; <a href="#1-&#x672C;&#x5730;Java&#x7A0B;&#x5E8F;&#x76D1;&#x63A7;">1 &#x672C;&#x5730;Java&#x7A0B;&#x5E8F;&#x76D1;&#x63A7;</a> &#x5F00;&#x59CB;&#x770B;</strong></p>
 <h3 id="0-1-&#x53D1;&#x73B0;&#x95EE;&#x9898;"><a href="#0-1-&#x53D1;&#x73B0;&#x95EE;&#x9898;" class="headerlink" title="0.1 &#x53D1;&#x73B0;&#x95EE;&#x9898;"></a>0.1 &#x53D1;&#x73B0;&#x95EE;&#x9898;</h3><blockquote>
 <p> &#x4F7F;&#x7528;<code>top</code>&#x547D;&#x4EE4;&#x67E5;&#x770B;Java&#x7A0B;&#x5E8F;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#xFF0C;&#x5927;&#x4E8E;&#x8BBE;&#x7F6E;&#x7684;&#x6700;&#x5927;&#x7684;&#x4F7F;&#x7528;&#x5185;&#x5B58;&#x3002;&#xFF08;<code>top</code>&#x754C;&#x9762;&#x67E5;&#x770B;&#x7684;&#x662F;<code>RES</code>&#x5B57;&#x6BB5;&#x7684;&#x503C;&#xFF0C;&#x8BBE;&#x7F6E;Java&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x6700;&#x5927;&#x5806;&#x5185;&#x5B58;&#x65B9;&#x5F0F;&#x662F;<code>-Xmx</code>&#x65B9;&#x6CD5;&#xFF09;</p>
 </blockquote>
@@ -440,6 +442,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/25/使用Metrics方法级远程监控Java程序/" rel="prev" title="使用Metrics方法级远程监控Java程序">
+                使用Metrics方法级远程监控Java程序 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -534,7 +540,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">27</span>
+              <span class="site-state-item-count">28</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
