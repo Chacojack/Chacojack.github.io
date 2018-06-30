@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title><![CDATA[iTerm2一键登录服务器]]></title>
+      <url>https://chacojack.github.io/2018/06/30/iTerm2%E4%B8%80%E9%94%AE%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+      <content type="html"><![CDATA[<h1 id="iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;"><a href="#iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;" class="headerlink" title="iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;"></a>iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;</h1><h2 id="1-&#x6253;&#x5F00;Profiles"><a href="#1-&#x6253;&#x5F00;Profiles" class="headerlink" title="1. &#x6253;&#x5F00;Profiles"></a>1. &#x6253;&#x5F00;Profiles</h2><p>Cmd+O&#x6253;&#x5F00;&#x754C;&#x9762;&#x3002;</p>
+<a id="more"></a>
+<p><img src="/2018/06/30/iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;/Profiles&#x754C;&#x9762;.png" alt="Profiles&#x754C;&#x9762;"></p>
+<p>&#x7136;&#x540E;&#x70B9;&#x51FB;&#x7F16;&#x8F91;Edit Profiles</p>
+<p><img src="/2018/06/30/iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;/Profile&#x914D;&#x7F6E;&#x754C;&#x9762;.png" alt="Profile&#x914D;&#x7F6E;&#x754C;&#x9762;"></p>
+<h2 id="2-&#x914D;&#x7F6E;&#x767B;&#x9646;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;"><a href="#2-&#x914D;&#x7F6E;&#x767B;&#x9646;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;" class="headerlink" title="2. &#x914D;&#x7F6E;&#x767B;&#x9646;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;"></a>2. &#x914D;&#x7F6E;&#x767B;&#x9646;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;</h2><p>&#x4F8B;&#x5982;&#x6211;&#x8FD9;&#x91CC;&#x8981;&#x767B;&#x9646;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x540D;&#x53EB;197&#x7684;&#x673A;&#x5668;&#x5206;&#x4E3A;&#x51E0;&#x6B65;&#xFF1A;</p>
+<ol>
+<li>&#x767B;&#x9646;&#x5230;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8DF3;&#x677F;&#x673A;</li>
+<li>&#x901A;&#x8FC7;&#x8DF3;&#x677F;&#x673A;&#x767B;&#x9646;&#x5230;197&#x7684;&#x673A;&#x5668;</li>
+</ol>
+<h3 id="2-1-&#x914D;&#x7F6E;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;"><a href="#2-1-&#x914D;&#x7F6E;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;" class="headerlink" title="2.1 &#x914D;&#x7F6E;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;"></a>2.1 &#x914D;&#x7F6E;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;</h3><p>&#x5BF9;&#x4E8E;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;&#xFF0C;&#x6211;&#x662F;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;alias&#xFF0C;&#x8FD9;&#x6837;&#x5982;&#x679C;&#x8DF3;&#x677F;&#x673A;&#x6709;&#x6539;&#x52A8;&#x6211;&#x53EA;&#x9700;&#x8981;&#x6539;alias&#x5C31;&#x884C;&#x4E86;&#xFF0C;&#x6211;&#x5728;&#x8FD9;&#x91CC;&#x7684;&#x914D;&#x7F6E;&#x4E0D;&#x7528;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x53BB;&#x6539;&#x3002;&#x6211;&#x8FD9;&#x91CC;&#x767B;&#x9646;&#x6B63;&#x5F0F;&#x670D;&#x52A1;&#x5668;&#x7684;alias&#x53EB;lrelease&#xFF0C;&#x5982;&#x4F55;&#x7F16;&#x5199;alias&#xFF0C;&#x8BFB;&#x8005;&#x81EA;&#x884C;&#x767E;&#x5EA6;&#x3002;&#x5F53;&#x7136;&#x5B9E;&#x73B0;&#x540C;&#x6837;&#x6548;&#x679C;&#x4E0D;&#x6B62;&#x6709;alias&#xFF0C;&#x7F16;&#x5199;shell&#x811A;&#x672C;&#x4E5F;&#x53EF;&#x4EE5;&#xFF0C;&#x53EA;&#x8981;&#x80FD;&#x8FBE;&#x6210;&#x76EE;&#x7684;&#x5C31;&#x53EF;&#x4EE5;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x5F00;&#x59CB;&#x914D;&#x7F6E;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;&#x3002;</p>
+<p><img src="/2018/06/30/iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;/&#x914D;&#x7F6E;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;.png" alt="&#x914D;&#x7F6E;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;.png"></p>
+<p>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5148;&#x5173;&#x95ED;&#x7A97;&#x53E3;&#x56DE;&#x53BB;&#x770B;&#x4E0B;&#x6548;&#x679C;&#x4E86;&#xFF0C;Cmd+O&#xFF0C;&#x6253;&#x5F00;Profiles&#x9009;&#x62E9;197&#xFF0C;&#x770B;&#x770B;&#x662F;&#x4E0D;&#x662F;&#x767B;&#x9646;&#x5230;&#x4E86;&#x8DF3;&#x677F;&#x673A;&#x3002;</p>
+<p><img src="/2018/06/30/iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;/&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;&#x6210;&#x529F;&#x5C55;&#x793A;.png" alt="&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;&#x6210;&#x529F;&#x5C55;&#x793A;.png"></p>
+<h3 id="2-2-&#x914D;&#x7F6E;&#x767B;&#x9646;&#x5230;197"><a href="#2-2-&#x914D;&#x7F6E;&#x767B;&#x9646;&#x5230;197" class="headerlink" title="2.2 &#x914D;&#x7F6E;&#x767B;&#x9646;&#x5230;197"></a>2.2 &#x914D;&#x7F6E;&#x767B;&#x9646;&#x5230;197</h3><p>&#x56E0;&#x4E3A;&#x767B;&#x9646;&#x5230;&#x4E86;&#x8FDC;&#x7A0B;&#x673A;&#x5668;&#x7684;shell&#xFF0C;&#x4E00;&#x4E2A;&#x672C;&#x5730;shell&#x5148;&#x5B9E;&#x73B0;&#x767B;&#x9646;&#x5230;&#x8DF3;&#x677F;&#x673A;&#x518D;&#x8DF3;&#x5230;&#x76EE;&#x6807;&#x673A;&#x5668;&#x662F;&#x4E0D;&#x80FD;&#x7684;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x6211;&#x518D;&#x6B21;&#x8FDB;&#x5165;Profile&#x914D;&#x7F6E;&#x9875;&#x9762;&#xFF0C;&#x914D;&#x7F6E;&#x9762;&#x677F;&#x4E2D;&#x9009;&#x62E9;Advanced-&gt;Triggers&#x4E0B;&#x7684;Edit</p>
+<p><img src="/2018/06/30/iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;/&#x914D;&#x7F6E;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;&#x4E4B;&#x540E;&#x767B;&#x9646;&#x76EE;&#x6807;&#x673A;&#x5668;.png" alt="&#x914D;&#x7F6E;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;&#x4E4B;&#x540E;&#x767B;&#x9646;&#x76EE;&#x6807;&#x673A;&#x5668;.png"></p>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x4E24;&#x6761;Trigger&#x3002;</p>
+<p>&#x767B;&#x9646;&#x4E0A;&#x673A;&#x5668;&#x4E4B;&#x540E;&#x7EC8;&#x7AEF;&#x4F1A;&#x63A5;&#x53D7;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;Welcome&#x2026;&#x2026;&#x3002;&#x8FD9;&#x8BF4;&#x660E;&#x6211;&#x4EEC;&#x767B;&#x9646;&#x4E0A;&#x53BB;&#x4E86;&#x3002;</p>
+<ol>
+<li>&#x7B2C;&#x4E00;&#x6761;&#x7684;&#x610F;&#x601D;&#x662F;&#x3002;&#x5F53;&#x5339;&#x914D;&#x5230;Welcome&#x7684;&#x65F6;&#x5019;&#xFF08;&#x7B49;&#x540C;&#x4E8E;&#x6210;&#x529F;&#x767B;&#x9646;&#x5230;&#x4E00;&#x53F0;&#x673A;&#x5668;&#x7684;&#x65F6;&#x5019;&#xFF09;&#xFF0C;&#x8BA9;&#x7EC8;&#x7AEF;&#x6267;&#x884C;ifconfig&#xFF0C;&#x8F93;&#x51FA;&#x81EA;&#x5DF1;&#x7684;IP&#xFF1B;</li>
+<li>&#x7B2C;&#x4E8C;&#x6761;&#x7684;&#x610F;&#x601D;&#x662F;&#x3002;&#x5F53;&#x8F93;&#x51FA;&#x7684;IP&#x662F;&#x6307;&#x5B9A;IP&#xFF08;&#x8FD9;&#x91CC;&#x662F;&#x8DF3;&#x677F;&#x673A;IP 190&#xFF09;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x8BA9;&#x7EC8;&#x7AEF;&#x8F93;&#x51FA;<code>ssh L197</code>&#xFF08;&#x767B;&#x9646;197&#x7684;&#x547D;&#x4EE4;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x767B;&#x9646;&#x5230;197&#x7684;&#x673A;&#x5668;&#x4E86;</li>
+</ol>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="/2018/06/30/iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;/&#x767B;&#x9646;&#x76EE;&#x6807;&#x673A;&#x5668;&#x7ED3;&#x679C;&#x5C55;&#x793A;.png" alt="&#x767B;&#x9646;&#x76EE;&#x6807;&#x673A;&#x5668;&#x7ED3;&#x679C;&#x5C55;&#x793A;"></p>
+<h3 id="2-3-&#x56FA;&#x5B9A;Tab&#x7684;&#x540D;&#x79F0;"><a href="#2-3-&#x56FA;&#x5B9A;Tab&#x7684;&#x540D;&#x79F0;" class="headerlink" title="2.3 &#x56FA;&#x5B9A;Tab&#x7684;&#x540D;&#x79F0;"></a>2.3 &#x56FA;&#x5B9A;Tab&#x7684;&#x540D;&#x79F0;</h3><p>&#x6253;&#x51FB;&#x6CE8;&#x610F;&#x5230;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;Tab&#x7684;&#x540D;&#x79F0;&#x662F;&#x4E00;&#x5806;&#x4E71;&#x4E03;&#x516B;&#x7CDF;&#x5BF9;&#x6211;&#x4EEC;&#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4EF7;&#x503C;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x56FA;&#x5B9A;Tab&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+<ol>
+<li>&#x52FE;&#x9009;Preferences -&gt; Appearance -&gt; show profile name.</li>
+<li>&#x53D6;&#x6D88;&#x52FE;&#x9009;&#xFF1A;Preferences -&gt; Profiles -&gt; &#x9009;&#x62E9;&#x8981;&#x8BBE;&#x7F6E;&#x7684;Profile -&gt; Terminal -&gt; Terminal may set tab/window title</li>
+</ol>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="/2018/06/30/iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;/&#x56FA;&#x5B9A;Tab&#x540D;&#x79F0;.png" alt="&#x56FA;&#x5B9A;Tab&#x540D;&#x79F0;"></p>
+<p>&#x767B;&#x9646;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x4F9D;&#x7136;&#xFF0C;&#x540D;&#x79F0;&#x4F9D;&#x7136;&#x662F;Release-197&#xFF0C;&#x8FD9;&#x6837;&#x5728;&#x6807;&#x7B7E;&#x5F88;&#x591A;&#x7684;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x4E00;&#x773C;&#x5C31;&#x77E5;&#x9053;&#x54EA;&#x4E2A;&#x6807;&#x7B7E;&#x8FDE;&#x7684;&#x54EA;&#x53F0;&#x673A;&#x5668;&#x3002;</p>
+<h3 id="2-4-&#x4E0D;&#x540C;&#x73AF;&#x5883;&#x901A;&#x8FC7;&#x989C;&#x8272;&#x533A;&#x522B;&#x8BBE;&#x8BA1;"><a href="#2-4-&#x4E0D;&#x540C;&#x73AF;&#x5883;&#x901A;&#x8FC7;&#x989C;&#x8272;&#x533A;&#x522B;&#x8BBE;&#x8BA1;" class="headerlink" title="2.4 &#x4E0D;&#x540C;&#x73AF;&#x5883;&#x901A;&#x8FC7;&#x989C;&#x8272;&#x533A;&#x522B;&#x8BBE;&#x8BA1;"></a>2.4 &#x4E0D;&#x540C;&#x73AF;&#x5883;&#x901A;&#x8FC7;&#x989C;&#x8272;&#x533A;&#x522B;&#x8BBE;&#x8BA1;</h3><p>&#x6211;&#x4EEC;&#x5728;&#x5F00;&#x53D1;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x73AF;&#x5883;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x64CD;&#x4F5C;&#x7684;&#x5C0F;&#x5FC3;&#x7A0B;&#x5EA6;&#x662F;&#x4E0D;&#x540C;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x53EA;&#x6709;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4F7F;&#x7528;&#xFF0C;&#x57FA;&#x672C;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E3A;&#x6240;&#x6B32;&#x4E3A;&#xFF0C;&#x90A3;&#x4E48;&#x6807;&#x7B7E;&#x53EF;&#x4EE5;&#x662F;&#x7EFF;&#x8272;&#x3002;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#xFF0C;&#x6709;&#x6D4B;&#x8BD5;&#x4EBA;&#x5458;&#x4F7F;&#x7528;&#xFF0C;&#x8981;&#x4FDD;&#x8BC1;&#x73AF;&#x5883;&#x7684;&#x7A33;&#x5B9A;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5C31;&#x8981;&#x5C0F;&#x5FC3;&#x4E00;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x6D4B;&#x8BD5;&#x7684;&#x8BBE;&#x7F6E;&#x6210;&#x9EC4;&#x8272;&#x4F5C;&#x4E3A;&#x8B66;&#x793A;&#x3002;&#x800C;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x6211;&#x4EEC;&#x8981;&#x975E;&#x5E38;&#x975E;&#x5E38;&#x5C0F;&#x5FC3;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x7528;&#x7EA2;&#x8272;&#x4F5C;&#x4E3A;&#x8B66;&#x793A;&#x3002;</p>
+<p>&#x5230;Profile&#x7684;&#x914D;&#x7F6E;&#x9762;&#x677F;&#x4E2D;&#xFF1A;</p>
+<ol>
+<li>Color -&gt; Tab Color&#xFF0C;&#x6807;&#x7B7E;&#x8BBE;&#x7F6E;&#x6210;&#x7EA2;&#x8272;</li>
+<li>Color -&gt; Cursor&#xFF0C;&#x5149;&#x6807;&#x8BBE;&#x7F6E;&#x6210;&#x7EA2;&#x8272;</li>
+</ol>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="/2018/06/30/iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;/&#x989C;&#x8272;&#x8BBE;&#x7F6E;.png" alt="&#x989C;&#x8272;&#x8BBE;&#x7F6E;"></p>
+<h3 id="2-5-&#x914D;&#x7F6E;&#x62F7;&#x8D1D;"><a href="#2-5-&#x914D;&#x7F6E;&#x62F7;&#x8D1D;" class="headerlink" title="2.5 &#x914D;&#x7F6E;&#x62F7;&#x8D1D;"></a>2.5 &#x914D;&#x7F6E;&#x62F7;&#x8D1D;</h3><p>&#x914D;&#x7F6E;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x5F00;&#x53D1;&#xFF0C;&#x6D4B;&#x8BD5;&#xFF0C;&#x6B63;&#x5F0F;&#x4E0A;&#x7684;&#x673A;&#x5668;&#x90A3;&#x4E48;&#x591A;&#xFF0C;&#x6211;&#x4EEC;&#x8981;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x592A;&#x9EBB;&#x70E6;&#x4E86;&#x3002;iterm&#x53EF;&#x4EE5;&#x62F7;&#x8D1D;&#x914D;&#x7F6E;&#x3002;</p>
+<p><img src="/2018/06/30/iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;/&#x62F7;&#x8D1D;Profile&#x914D;&#x7F6E;.png" alt="&#x62F7;&#x8D1D;Profile&#x914D;&#x7F6E;"></p>
+<p><img src="/2018/06/30/iTerm2&#x4E00;&#x952E;&#x767B;&#x5F55;&#x670D;&#x52A1;&#x5668;/&#x62F7;&#x8D1D;Profile&#x754C;&#x9762;.png" alt="&#x62F7;&#x8D1D;Profile&#x754C;&#x9762;"></p>
+<p>&#x6211;&#x4EEC;&#x53D1;&#x73B0;&#x6CA1;&#x6709;General&#xFF0C;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;&#x7684;&#x914D;&#x7F6E;&#x5728;&#x8FD9;&#x91CC;&#xFF0C;&#x800C;&#x4E14;&#x6211;&#x4EEC;&#x767B;&#x9646;&#x7684;&#x76EE;&#x6807;&#x673A;&#x5668;&#x80AF;&#x5B9A;&#x4E0D;&#x662F;&#x6211;&#x4EEC;&#x62F7;&#x8D1D;&#x7684;&#x90A3;&#x4E2A;&#x3002;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x6211;&#x4EEC;&#x8981;&#x53BB;&#x66F4;&#x6539;&#x4E24;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>General&#x4E2D;&#x8865;&#x5145;&#x767B;&#x9646;&#x8DF3;&#x677F;&#x673A;&#x7684;&#x914D;&#x7F6E;</li>
+<li>Trigger&#x4E2D;&#x66F4;&#x6539;&#x767B;&#x9646;&#x7684;&#x76EE;&#x6807;&#x673A;&#x5668;</li>
+</ol>
+<p>&#x7ED3;&#x679C;&#x81EA;&#x5DF1;&#x5C1D;&#x8BD5;&#x5427;&#x3002;</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用Metrics方法级远程监控Java程序（优化）]]></title>
       <url>https://chacojack.github.io/2017/12/27/%E4%BD%BF%E7%94%A8Metrics%E6%96%B9%E6%B3%95%E7%BA%A7%E8%BF%9C%E7%A8%8B%E7%9B%91%E6%8E%A7Java%E7%A8%8B%E5%BA%8F%EF%BC%88%E4%BC%98%E5%8C%96%EF%BC%89/</url>
       <content type="html"><![CDATA[<p><a href="https://juejin.im/post/5a4382c46fb9a0450c49b18a" target="_blank" rel="external"><img src="https://badge.juejin.im/entry/5a4383516fb9a0452a3c9c3f/likes.svg?style=flat-square" alt=""></a></p>
