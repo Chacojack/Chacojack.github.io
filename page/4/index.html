@@ -87,7 +87,7 @@
 <meta name="description" content="对代码永不满足">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ZejianChai's Note">
-<meta property="og:url" content="https://chacojack.github.io/categories/后台/index.html">
+<meta property="og:url" content="https://chacojack.github.io/page/4/index.html">
 <meta property="og:site_name" content="ZejianChai's Note">
 <meta property="og:description" content="对代码永不满足">
 <meta name="twitter:card" content="summary">
@@ -113,9 +113,9 @@
 
 
 
-  <link rel="canonical" href="https://chacojack.github.io/categories/后台/"/>
+  <link rel="canonical" href="https://chacojack.github.io/page/4/"/>
 
-  <title> 分类: 后台 | ZejianChai's Note </title>
+  <title> ZejianChai's Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +136,9 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,96 +248,139 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+  <section id="posts" class="posts-expand">
+    
+      
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        后台
-        <small>分类</small>
-      </h2>
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/07/06/Java签名-keystore文件的生成方法/" itemprop="url">
+                  生成Java签名.keystore文件的方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-06T21:21:01+08:00" content="2016-07-06">
+              2016-07-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/06/Java签名-keystore文件的生成方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/06/Java签名-keystore文件的生成方法/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/06/Java签名-keystore文件的生成方法/" class="leancloud_visitors" data-flag-title="生成Java签名.keystore文件的方法">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&#x4ECA;&#x5929;&#x63A5;&#x89E6;&#x5230;&#x4E86;Java&#x7B7E;&#x540D;&#x76F8;&#x5173;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x60F3;&#x8981;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#xFF0C;&#x5F88;&#x591A;&#x4E1C;&#x897F;&#x4ECB;&#x7ECD;&#x7684;&#x4E0D;&#x5168;&#x9762;&#xFF0C;&#x524D;&#x56E0;&#x540E;&#x679C;&#x4E5F;&#x4ECB;&#x7ECD;&#x7684;&#x4E0D;&#x662F;&#x5F88;&#x6E05;&#x695A;&#x3002;&#x627E;&#x4E86;&#x5F88;&#x591A;&#x5730;&#x65B9;&#x7EC8;&#x4E8E;&#x4E86;&#x89E3;&#x4E86;&#x5927;&#x6982;&#xFF0C;&#x6574;&#x7406;&#x5728;&#x8FD9;&#x91CC;&#x3002;&#x8003;&#x8651;&#x5230;&#x5F88;&#x591A;&#x67E5;&#x770B;&#x7684;&#x4EBA;&#x7684;&#x9700;&#x6C42;&#x70B9;&#x4E0D;&#x540C;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x628A;&#x6240;&#x6709;&#x7684;&#x4E1C;&#x897F;&#x653E;&#x5728;&#x4E00;&#x904D;&#x6587;&#x7AE0;&#x4E2D;&#xFF0C;&#x5BFC;&#x81F4;&#x6587;&#x7AE0;&#x5F88;&#x957F;&#x3002;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x5C31;&#x53EA;&#x4ECB;&#x7ECD;Java&#x7B7E;&#x540D;.keystore&#x6587;&#x4EF6;&#x7684;&#x751F;&#x6210;&#x65B9;&#x6CD5;&#xFF0C;&#x548C;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<h2 id="&#x751F;&#x6210;&#x65B9;&#x6CD5;"><a href="#&#x751F;&#x6210;&#x65B9;&#x6CD5;" class="headerlink" title="&#x751F;&#x6210;&#x65B9;&#x6CD5;"></a>&#x751F;&#x6210;&#x65B9;&#x6CD5;</h2><p>&#x5728;&#x7EC8;&#x7AEF;&#x8F93;&#x5165;&#xFF1A;</p>
+<blockquote>
+<p>keytool -genkey -alias javadebugkey(&#x522B;&#x540D;) -keypass java123(&#x522B;&#x540D;&#x5BC6;) -keyalg RSA(&#x751F;&#x6210;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;) -keysize 1024(&#x5BC6;&#x94A5;&#x957F;&#x5EA6;) -validity 365(&#x6709;&#x6548;&#x671F;&#xFF0C;&#x5929;&#x5355;&#x4F4D;) -keystore javadebugkey.keystore(&#x751F;&#x6210;&#x7684;keystore&#x6587;&#x4EF6;)</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/06/Java签名-keystore文件的生成方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
     </div>
 
-    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/25/使用Metrics方法级远程监控Java程序/" itemprop="url">
-              
-                <span itemprop="name">使用Metrics方法级远程监控Java程序</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-25T21:53:52+08:00"
-              content="2017-12-25" >
-          12-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/18/使用jvisualvm监控Java程序（本地和远程）/" itemprop="url">
-              
-                <span itemprop="name">使用jvisualvm监控Java程序（本地和远程）</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-18T20:48:44+08:00"
-              content="2017-12-18" >
-          12-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/12/18/RabbitMQ-Mac-安装/" itemprop="url">
-              
-                <span itemprop="name">RabbitMQ Mac 安装</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-12-18T19:57:17+08:00"
-              content="2017-12-18" >
-          12-18
-        </time>
-      </div>
-
-    </header>
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
@@ -343,6 +388,9 @@
   </section>
 
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
 
 
 

@@ -271,6 +271,145 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/07/RecyclerView源码分析-四-动画流程/" itemprop="url">
+                  RecyclerView源码分析(四)--动画流程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-07T22:00:00+08:00" content="2016-09-07">
+              2016-09-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/07/RecyclerView源码分析-四-动画流程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/07/RecyclerView源码分析-四-动画流程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/07/RecyclerView源码分析-四-动画流程/" class="leancloud_visitors" data-flag-title="RecyclerView源码分析(四)--动画流程">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>&#x770B;&#x5B8C;&#x672C;&#x6587;&#x4F60;&#x5927;&#x6982;&#x9700;&#x8981; 8.3&#x5206; &#x7684;&#x6BC5;&#x529B;</p>
+<blockquote>
+<p>&#x76F8;&#x5173;&#x7CFB;&#x5217;&#x6587;&#x7AE0;</p>
+<p><a href="https://chacojack.github.io/2016/08/20/RecyclerView%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%80-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/">RecyclerView&#x6E90;&#x7801;&#x5206;&#x6790;(&#x4E00;)&#x2013;&#x6574;&#x4F53;&#x8BBE;&#x8BA1;</a></p>
+<p><a href="https://chacojack.github.io/2016/08/21/RecyclerView%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%BA%8C-%E6%B5%8B%E7%BB%98%E4%BA%8E%E5%B8%83%E5%B1%80%E6%B5%81%E7%A8%8B/">RecyclerView&#x6E90;&#x7801;&#x5206;&#x6790;(&#x4E8C;)&#x2013;&#x6D4B;&#x91CF;&#x6D41;&#x7A0B;</a></p>
+<p><a href="https://chacojack.github.io/2016/08/22/RecyclerView%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90-%E4%B8%89-%E5%B8%83%E5%B1%80%E6%B5%81%E7%A8%8B/">RecyclerView&#x6E90;&#x7801;&#x5206;&#x6790;(&#x4E09;)&#x2013;&#x5E03;&#x5C40;&#x6D41;&#x7A0B;</a></p>
+</blockquote>
+<p>&#x4E0A;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x8BB2;&#x4E86;RecyclerView&#x7684;&#x5E03;&#x5C40;&#x6D41;&#x7A0B;&#xFF0C;&#x53D1;&#x73B0;&#x91CC;&#x9762;&#x5927;&#x591A;&#x6570;&#x5185;&#x5BB9;&#x90FD;&#x662F;&#x548C;&#x52A8;&#x753B;&#x76F8;&#x5173;&#x7684;&#x3002;&#x90A3;&#x4E48;&#x8FD9;&#x8FB9;&#x6587;&#x7AE0;&#x5C31;&#x5148;&#x8BB2;RecyclerView&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x6539;&#x53D8;&#x53D1;&#x51FA;&#x901A;&#x77E5;&#x5230;&#x64AD;&#x653E;&#x52A8;&#x753B;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x6D41;&#x7A0B;&#x3002;</p>
+<h1 id="RecyclerView&#x7684;&#x52A8;&#x753B;&#x6D41;&#x7A0B;"><a href="#RecyclerView&#x7684;&#x52A8;&#x753B;&#x6D41;&#x7A0B;" class="headerlink" title="RecyclerView&#x7684;&#x52A8;&#x753B;&#x6D41;&#x7A0B;"></a>RecyclerView&#x7684;&#x52A8;&#x753B;&#x6D41;&#x7A0B;</h1><p>&#x5BF9;&#x4E8E;RecyclerView&#x7684;&#x52A8;&#x753B;&#x6D41;&#x7A0B;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x7684;&#x957F;&#x7684;&#x6D41;&#x7A0B;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5148;&#x628A;&#x5927;&#x7684;&#x4E1C;&#x897F;&#x5206;&#x90E8;&#x5206;&#x6765;&#x770B;&#xFF0C;&#x4F1A;&#x8F7B;&#x677E;&#x4E00;&#x70B9;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x56DE;&#x60F3;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x5728;RecyclerView&#x4E2D;&#x6570;&#x636E;&#x6539;&#x53D8;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8C03;&#x7528;&#x4EC0;&#x4E48;&#x51FD;&#x6570;&#x6765;&#x4F7F;&#x5176;&#x64AD;&#x653E;&#x52A8;&#x753B;&#x7684;&#x3002;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x90FD;&#x662F;&#x8C03;&#x7528;Adapter&#x7684;&#x4EE5;&#x4E0B;&#x51FD;&#x6570;&#x3002;</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/07/RecyclerView源码分析-四-动画流程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/22/RecyclerView源码分析-三-布局流程/" itemprop="url">
                   RecyclerView源码分析(三)--布局流程
                 </a>
@@ -1513,146 +1652,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/06/Java签名-keystore文件的生成方法/" itemprop="url">
-                  生成Java签名.keystore文件的方法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-06T21:21:01+08:00" content="2016-07-06">
-              2016-07-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/06/Java签名-keystore文件的生成方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/06/Java签名-keystore文件的生成方法/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/06/Java签名-keystore文件的生成方法/" class="leancloud_visitors" data-flag-title="生成Java签名.keystore文件的方法">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>&#x4ECA;&#x5929;&#x63A5;&#x89E6;&#x5230;&#x4E86;Java&#x7B7E;&#x540D;&#x76F8;&#x5173;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x60F3;&#x8981;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#xFF0C;&#x5F88;&#x591A;&#x4E1C;&#x897F;&#x4ECB;&#x7ECD;&#x7684;&#x4E0D;&#x5168;&#x9762;&#xFF0C;&#x524D;&#x56E0;&#x540E;&#x679C;&#x4E5F;&#x4ECB;&#x7ECD;&#x7684;&#x4E0D;&#x662F;&#x5F88;&#x6E05;&#x695A;&#x3002;&#x627E;&#x4E86;&#x5F88;&#x591A;&#x5730;&#x65B9;&#x7EC8;&#x4E8E;&#x4E86;&#x89E3;&#x4E86;&#x5927;&#x6982;&#xFF0C;&#x6574;&#x7406;&#x5728;&#x8FD9;&#x91CC;&#x3002;&#x8003;&#x8651;&#x5230;&#x5F88;&#x591A;&#x67E5;&#x770B;&#x7684;&#x4EBA;&#x7684;&#x9700;&#x6C42;&#x70B9;&#x4E0D;&#x540C;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x628A;&#x6240;&#x6709;&#x7684;&#x4E1C;&#x897F;&#x653E;&#x5728;&#x4E00;&#x904D;&#x6587;&#x7AE0;&#x4E2D;&#xFF0C;&#x5BFC;&#x81F4;&#x6587;&#x7AE0;&#x5F88;&#x957F;&#x3002;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x5C31;&#x53EA;&#x4ECB;&#x7ECD;Java&#x7B7E;&#x540D;.keystore&#x6587;&#x4EF6;&#x7684;&#x751F;&#x6210;&#x65B9;&#x6CD5;&#xFF0C;&#x548C;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
-<h2 id="&#x751F;&#x6210;&#x65B9;&#x6CD5;"><a href="#&#x751F;&#x6210;&#x65B9;&#x6CD5;" class="headerlink" title="&#x751F;&#x6210;&#x65B9;&#x6CD5;"></a>&#x751F;&#x6210;&#x65B9;&#x6CD5;</h2><p>&#x5728;&#x7EC8;&#x7AEF;&#x8F93;&#x5165;&#xFF1A;</p>
-<blockquote>
-<p>keytool -genkey -alias javadebugkey(&#x522B;&#x540D;) -keypass java123(&#x522B;&#x540D;&#x5BC6;) -keyalg RSA(&#x751F;&#x6210;&#x7B7E;&#x540D;&#x7B97;&#x6CD5;) -keysize 1024(&#x5BC6;&#x94A5;&#x957F;&#x5EA6;) -validity 365(&#x6709;&#x6548;&#x671F;&#xFF0C;&#x5929;&#x5355;&#x4F4D;) -keystore javadebugkey.keystore(&#x751F;&#x6210;&#x7684;keystore&#x6587;&#x4EF6;)</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/06/Java签名-keystore文件的生成方法/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1693,7 +1697,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
